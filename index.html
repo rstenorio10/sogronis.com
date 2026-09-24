@@ -1,0 +1,752 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sogronis FC</title>
+    
+    <!-- Google Fonts & Font Awesome (Ícones) -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@700;900&family=Plus+Jakarta+Sans:wght@400;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <!-- CSS Local -->
+    <link rel="stylesheet" href="./style.css">
+</head>
+<body>
+
+   <header class="header">
+        <!-- Barra de Patrocinadores Rotativa -->
+        <div class="top-sponsor-bar">
+            <div class="sponsor-label">
+                <i class="fas fa-crown text-gold"></i> PATROCINADORES OFICIAIS
+            </div>
+            <div class="patrocinios-wrapper">
+                <div class="patrocinios-track">
+                    <span class="patrocinio-item"><i class="fas fa-bolt"></i> Patrocínio 1</span>
+                    <span class="divider">•</span>
+                    <span class="patrocinio-item"><i class="fas fa-shield-alt"></i> Patrocínio 2</span>
+                    <span class="divider">•</span>
+                    <span class="patrocinio-item"><i class="fas fa-star"></i> Patrocínio 3</span>
+                    <span class="divider">•</span>
+                    <span class="patrocinio-item"><i class="fas fa-gem"></i> Patrocínio Premium</span>
+                    <span class="divider">•</span>
+                    <span class="patrocinio-item"><i class="fas fa-bolt"></i> Patrocínio 1</span>
+                    <span class="divider">•</span>
+                    <span class="patrocinio-item"><i class="fas fa-shield-alt"></i> Patrocínio 2</span>
+                    <span class="divider">•</span>
+                    <span class="patrocinio-item"><i class="fas fa-star"></i> Patrocínio 3</span>
+                </div>
+            </div>
+        </div>
+
+        <!-- Navegação Principal -->
+        <nav class="nav-container">
+            <!-- Escudo / Logo do Time -->
+            <div class="brand-logo">
+                <a href="#" class="logo-link">
+                    <div class="logo-badge">
+                        <img src="./img/escudo-time.png" class="logo-img" alt="Sogronis FC">
+                    </div>
+                    <span class="brand-name">SOGRONIS <span class="gold-text">FC</span></span>
+                </a>
+            </div>
+
+            <!-- Botão Hambúrguer para Telas Menores -->
+            <button class="mobile-toggle" id="mobileToggle" aria-label="Abrir menu">
+                <i class="fas fa-bars"></i>
+            </button>
+
+            <!-- Links do Menu -->
+            <ul class="nav-links" id="navLinks">
+                <li><a href="#" class="active">Início</a></li>
+                <li><a href="#resultados">Resultados</a></li>
+                <li><a href="#elenco">Elenco</a></li>
+                <li><a href="#formacao">Formação</a></li>
+                <li><a href="#galeria">Galeria</a></li>
+                <li class="mobile-only-actions">
+                    <div class="social-icons">
+                        <a href="https://www.instagram.com/e.c_sogronis_f_a/" target="_blank" aria-label="Instagram" class="social-btn">
+                            <i class="fab fa-instagram"></i>
+                        </a>
+                        <a href="https://facebook.com" target="_blank" aria-label="Facebook" class="social-btn">
+                            <i class="fab fa-facebook-f"></i>
+                        </a>
+                    </div>
+                    <a href="#contato" class="btn-gold-action">
+                        <i class="fab fa-whatsapp"></i> Contato
+                    </a>
+                </li>
+            </ul>
+
+            <!-- Redes Sociais e Botão em Desktop -->
+            <div class="nav-actions">
+                <div class="social-icons">
+                    <a href="https://www.instagram.com/e.c_sogronis_f_a/" target="_blank" aria-label="Instagram" class="social-btn">
+                        <i class="fab fa-instagram"></i>
+                    </a>
+                    <a href="https://facebook.com" target="_blank" aria-label="Facebook" class="social-btn">
+                        <i class="fab fa-facebook-f"></i>
+                    </a>
+                </div>
+                
+                <a href="#contato" class="btn-gold-action">
+                    <i class="fab fa-whatsapp"></i> Contato
+                </a>
+            </div>
+        </nav>
+    </header>
+
+    <main>
+        <section class="sec-principal">
+            <div class="prox-jogo">
+                <h2>
+                    <span class="nome-time">SOG FA</span> 
+                    <img src="./img/escudo-time.png" alt="Sogronis FC" class="escudo-time"> 
+                    <span class="vs-text">X</span>  
+                    <img src="./img/miliano.png" alt="Adversário" class="escudo-time-2"> 
+                    <span class="nome-time">MIL FC</span>
+                </h2>
+                <p><i class="far fa-calendar-alt"></i> Data: 27/09/2026 às 07:40hrs</p>
+            </div>
+
+            <div class="sec-destaque">
+                <div class="destaque">
+                    <div class="slider-track">
+                        <!-- Slide 1 -->
+                        <div class="slide">
+                            <img src="img/Enajelo-img.png" alt="Destaque 1">
+                            <div class="banner-content">
+                                <span class="badge-destaque">DESTAQUE #1</span>
+                                <h1>SOGRONIS VOLTA COM TUDO NA PREPARAÇÃO PARA <span>2027</span></h1>
+                                <p>Confira a preparação do nosso elenco principal para a próxima rodada.</p>
+                            </div>
+                        </div>
+
+                        <!-- Slide 2 -->
+                        <div class="slide">
+                            <img src="img/fundo-banner-jogo.jfif" alt="Destaque 2">
+                            <div class="banner-content">
+                                <span class="badge-destaque">NOSSA CASA</span>
+                                <h1>ARENA PINHEIRINHO D'ÁGUA <span>SÁBADO 07:40</span></h1>
+                                <p>Garanta seu apoio e venha empurrar o time do início ao fim.</p>
+                            </div>
+                        </div>
+
+                        <!-- Slide 3 -->
+                        <div class="slide">
+                            <img src="./img/uniforme-novo1.jfif" alt="Destaque 3">
+                            <div class="banner-content">
+                                <span class="badge-destaque">NOVO UNIFORME</span>
+                                <h1>MANTO OFICIAL <span>TEMPORADA</span></h1>
+                                <p>Conheça os detalhes do novo uniforme para os jogos do time.</p>
+                            </div>
+                        </div>
+
+                        <!-- Slide 4 -->
+                        <div class="slide">
+                            <img src="https://images.unsplash.com/photo-1489944440615-453fc2b6a9a9?q=80&w=1200" alt="Destaque 4">
+                            <div class="banner-content">
+                                <span class="badge-destaque">TORCIDA</span>
+                                <h1>UNIDOS PELO SOGRONIS <span>FC</span></h1>
+                                <p>A força da nossa arquibancada faz toda a diferença dentro de campo.</p>
+                            </div>
+                        </div>
+
+                        <!-- Slide 5 -->
+                        <div class="slide">
+                            <img src="img/time-novo.png" alt="Destaque 5">
+                            <div class="banner-content">
+                                <span class="badge-destaque">BASE SOGRONIS</span>
+                                <h1>FUTURO DO CLUBE <span>Evolução da Equipe</span></h1>
+                                <p>Talentos do passado ressurgem e ganham destaque no time.</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="timer-line"></div>
+                </div>
+            </div>
+        </section>
+
+<!-- MAIN LOCAL ONDE VAMOS FAZER NOSSAS SECTIONS PARA DAR CONTINUIDADE NA NOSSA PAGINA.-->
+
+    <section class="sec-resultados">
+    
+    <!-- Cabeçalho com Título e Botões de Navegação -->
+    <div class="sec-header-resultado" id="resultados">
+        <h2>Resultados</h2>
+        <div style="display: flex; gap: 8px;">
+            <!-- Botão Inserido mantendo SUA ESTILIZAÇÃO (.btn-proximos) -->
+            <button class="btn-proximos" id="btnAnteriores" title="Jogos mais recentes">
+                &#10094; <span>Recentes</span>
+            </button>
+            <button class="btn-proximos" id="btnProximos" title="Próximos jogos">
+                <span>Mais Antigos</span>
+                &#10095;
+            </button>
+        </div>
+    </div>
+
+    <!-- Container dos Cards -->
+    <div class="resultados" id="resultadosContainer">
+        
+        <!-- Card 1 -->
+        <div class="card">
+            <div class="data-resultado">
+                <h3>Jogo <span>20/09/2026</span></h3>
+            </div>
+            <div class="times">
+                <div class="time-casa">
+                    <h4><img src="./img/escudo-time.png" alt=""></h4>
+                    <span>4</span>
+                </div>
+                <p>X</p>
+                <div class="time-casa">
+                    <span>3</span>
+                    <h4><img src="./" alt=""></h4>
+                </div>
+            </div>
+            <div class="nomeTime">
+                <p>SOGRONI'S</p>
+                <p>LEÕES DO CITY</p>
+            </div>
+        </div>
+
+        <!-- Card 2 -->
+        <div class="card">
+            <div class="data-resultado">
+                <h3>Jogo <span>13/09/2026</span></h3>
+            </div>
+            <div class="times">
+                <div class="time-casa">
+                    <h4><img src="./img/escudo-time.png" alt=""></h4>
+                    <span>5</span>
+                </div>
+                <p>X</p>
+                <div class="time-casa">
+                    <span>1</span>
+                    <h4><img src="./" alt=""></h4>
+                </div>
+            </div>
+            <div class="nomeTime">
+                <p>SOGRONI'S</p>
+                <p>KONGOS DA 13</p>
+            </div>
+        </div>
+
+        <!-- Card 3 -->
+        <div class="card">
+            <div class="data-resultado">
+                <h3>Jogo <span>06/09/2026</span></h3>
+            </div>
+            <div class="times">
+                <div class="time-casa">
+                    <h4><img src="./img/escudo-time.png" alt=""></h4>
+                    <span>3</span>
+                </div>
+                <p>X</p>
+                <div class="time-casa">
+                    <span>1</span>
+                    <h4><img src="./" alt=""></h4>
+                </div>
+            </div>
+            <div class="nomeTime">
+                <p>SOGRONI'S</p>
+                <p>VISTA ALEGRE</p>
+            </div>
+        </div>
+
+        <!-- Card 4 -->
+        <div class="card">
+            <div class="data-resultado">
+                <h3>Jogo <span>30/08/2026</span></h3>
+            </div>
+            <div class="times">
+                <div class="time-casa">
+                    <h4><img src="./img/escudo-time.png" alt=""></h4>
+                    <span>5</span>
+                </div>
+                <p>X</p>
+                <div class="time-casa">
+                    <span>1</span>
+                    <h4><img src="./img/escudo-time.png" alt=""></h4>
+                </div>
+            </div>
+            <div class="nomeTime">
+                <p>SOGRONI'S</p>
+                <p>JUVENTUS JAR.</p>
+            </div>
+        </div>
+
+        <!-- Você pode adicionar livremente Card 5, Card 6, Card 7... -->
+
+    </div>
+
+</section>
+
+       <section class="sec-elenco">
+    <!-- Cabeçalho -->
+    <div class="sec-header-elenco" id="elenco">
+        <h2>Elenco Oficial</h2>
+        <!-- Controles e Pontos do Carrossel -->
+        <div class="elenco-controles">
+            <button id="btnElencoPrev" class="btn-elenco-nav" aria-label="Anterior">&#10094;</button>
+            <div class="elenco-dots" id="elencoDots"></div>
+            <button id="btnElencoNext" class="btn-elenco-nav" aria-label="Próximo">&#10095;</button>
+        </div>
+    </div>
+
+    <!-- Viewport do Carrossel -->
+    <div class="elenco-viewport" id="elencoViewport">
+        <div class="elenco-track" id="elencoTrack">
+
+            <!-- CARD 1 -->
+            <div class="itens-card">
+                <div class="card-arte-bg"></div>
+                <div class="foto-coluna">
+                    <img src="./img/img-jogador/jogador-pato.jpg" alt="Pato" class="img-jogador">
+                    <span class="badge-posicao">MEI / ATA</span>
+                </div>
+                <div class="info-coluna">
+                    <div class="header-atleta">
+                        <h3>PATO</h3>
+                        <span class="numero-camisa">#11</span>
+                    </div>
+                    <div class="specs-grid">
+                        <div class="spec-item">
+                            <span class="label">ALTURA</span>
+                            <span class="valor">1.62m</span>
+                        </div>
+                        <div class="spec-item">
+                            <span class="label">IDADE</span>
+                            <span class="valor">37 Anos</span>
+                        </div>
+                    </div>
+                    <div class="cidade-natal">
+                        <span class="label">ORIGEM</span>
+                        <p>São Paulo - SP</p>
+                    </div>
+                    <a href="https://instagram.com" target="_blank" rel="noopener noreferrer" class="btn-instagram">
+                        <svg viewBox="0 0 24 24" width="14" height="14" stroke="currentColor" stroke-width="2" fill="none"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line></svg>
+                        <span>Instagram</span>
+                    </a>
+                </div>
+            </div>
+
+            <!-- CARD 2 -->
+            <div class="itens-card">
+                <div class="card-arte-bg"></div>
+                <div class="foto-coluna">
+                    <img src="./img/img-jogador/jogador-tita.jpg" alt="Davi Tenorio" class="img-jogador">
+                    <span class="badge-posicao">LT.ESC</span>
+                </div>
+                <div class="info-coluna">
+                    <div class="header-atleta">
+                        <h3>ANDERSON TITA</h3>
+                        <span class="numero-camisa">#13</span>
+                    </div>
+                    <div class="specs-grid">
+                        <div class="spec-item">
+                            <span class="label">ALTURA</span>
+                            <span class="valor">1.55m</span>
+                        </div>
+                        <div class="spec-item">
+                            <span class="label">IDADE</span>
+                            <span class="valor">44 Anos</span>
+                        </div>
+                    </div>
+                    <div class="cidade-natal">
+                        <span class="label">ORIGEM</span>
+                        <p>São Paulo - SP</p>
+                    </div>
+                    <a href="https://instagram.com" target="_blank" rel="noopener noreferrer" class="btn-instagram">
+                        <svg viewBox="0 0 24 24" width="14" height="14" stroke="currentColor" stroke-width="2" fill="none"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line></svg>
+                        <span>Instagram</span>
+                    </a>
+                </div>
+            </div>
+
+            <!-- CARD 3 -->
+            <div class="itens-card">
+                <div class="card-arte-bg"></div>
+                <div class="foto-coluna">
+                    <img src="./img/img-jogador/jogador-bloco.jpg" alt="Lucas Silva" class="img-jogador">
+                    <span class="badge-posicao">VOLANTE</span>
+                </div>
+                <div class="info-coluna">
+                    <div class="header-atleta">
+                        <h3>TIJOLO</h3>
+                        <span class="numero-camisa">#08</span>
+                    </div>
+                    <div class="specs-grid">
+                        <div class="spec-item">
+                            <span class="label">ALTURA</span>
+                            <span class="valor">1.72m</span>
+                        </div>
+                        <div class="spec-item">
+                            <span class="label">IDADE</span>
+                            <span class="valor">36 Anos</span>
+                        </div>
+                    </div>
+                    <div class="cidade-natal">
+                        <span class="label">ORIGEM</span>
+                        <p>São Paulo - SP</p>
+                    </div>
+                    <a href="https://instagram.com" target="_blank" rel="noopener noreferrer" class="btn-instagram">
+                        <svg viewBox="0 0 24 24" width="14" height="14" stroke="currentColor" stroke-width="2" fill="none"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line></svg>
+                        <span>Instagram</span>
+                    </a>
+                </div>
+            </div>
+
+            <!-- CARD 4 -->
+            <div class="itens-card">
+                <div class="card-arte-bg"></div>
+                <div class="foto-coluna">
+                    <img src="./img/img-jogador/jogador-boquinha.png" alt="Lucas Silva" class="img-jogador">
+                    <span class="badge-posicao">MED / LT.DIR</span>
+                </div>
+                <div class="info-coluna">
+                    <div class="header-atleta">
+                        <h3>BOQUINHA</h3>
+                        <span class="numero-camisa">#16</span>
+                    </div>
+                    <div class="specs-grid">
+                        <div class="spec-item">
+                            <span class="label">ALTURA</span>
+                            <span class="valor">1.80m</span>
+                        </div>
+                        <div class="spec-item">
+                            <span class="label">IDADE</span>
+                            <span class="valor">39 Anos</span>
+                        </div>
+                    </div>
+                    <div class="cidade-natal">
+                        <span class="label">ORIGEM</span>
+                        <p>São Paulo - SP</p>
+                    </div>
+                    <a href="https://instagram.com" target="_blank" rel="noopener noreferrer" class="btn-instagram">
+                        <svg viewBox="0 0 24 24" width="14" height="14" stroke="currentColor" stroke-width="2" fill="none"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line></svg>
+                        <span>Instagram</span>
+                    </a>
+                </div>
+            </div>
+
+            <!-- CARD 5 -->
+
+            <div class="itens-card">
+                <div class="card-arte-bg"></div>
+                <div class="foto-coluna">
+                    <img src="./img/img-jogador/jogador-peruca.jfif" alt="Rodrigo Perucao" class="img-jogador">
+                    <span class="badge-posicao">MEE</span>
+                </div>
+                <div class="info-coluna">
+                    <div class="header-atleta">
+                        <h3>PERUCÃO</h3>
+                        <span class="numero-camisa">#14</span>
+                    </div>
+                    <div class="specs-grid">
+                        <div class="spec-item">
+                            <span class="label">ALTURA</span>
+                            <span class="valor">1.86m</span>
+                        </div>
+                        <div class="spec-item">
+                            <span class="label">IDADE</span>
+                            <span class="valor">39 Anos</span>
+                        </div>
+                    </div>
+                    <div class="cidade-natal">
+                        <span class="label">ORIGEM</span>
+                        <p>SÃO PAULO - SP</p>
+                    </div>
+                    <a href="https://instagram.com" target="_blank" rel="noopener noreferrer" class="btn-instagram">
+                        <svg viewBox="0 0 24 24" width="14" height="14" stroke="currentColor" stroke-width="2" fill="none"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line></svg>
+                        <span>Instagram</span>
+                    </a>
+                </div>
+            </div>
+
+            <!-- CARD 6 -->
+            <div class="itens-card">
+                <div class="card-arte-bg"></div>
+                <div class="foto-coluna">
+                    <img src="./img/img-jogador/jogador-cabeça.png" alt="Lucas Silva" class="img-jogador">
+                    <span class="badge-posicao">STA</span>
+                </div>
+                <div class="info-coluna">
+                    <div class="header-atleta">
+                        <h3>CABEÇA</h3>
+                        <span class="numero-camisa">#09</span>
+                    </div>
+                    <div class="specs-grid">
+                        <div class="spec-item">
+                            <span class="label">ALTURA</span>
+                            <span class="valor">1.83m</span>
+                        </div>
+                        <div class="spec-item">
+                            <span class="label">IDADE</span>
+                            <span class="valor">38 Anos</span>
+                        </div>
+                    </div>
+                    <div class="cidade-natal">
+                        <span class="label">ORIGEM</span>
+                        <p>SÃO PAULO - SP</p>
+                    </div>
+                    <a href="https://instagram.com" target="_blank" rel="noopener noreferrer" class="btn-instagram">
+                        <svg viewBox="0 0 24 24" width="14" height="14" stroke="currentColor" stroke-width="2" fill="none"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line></svg>
+                        <span>Instagram</span>
+                    </a>
+                </div>
+            </div>
+
+            <!-- Adicione os outros cards de 4 a 18 seguindo a mesma estrutura acima -->
+
+        </div>
+    </div>
+
+    
+</section>
+        <!-- SECTION RESPONSAVEL POR MOSTRAR A FORMAÇÃO DO TIME EM UM CAMPO DE FUNTEBOL ILUSTRATIVO PARA MOSTRAR COMO FICARIA A ESCALAÇÃO DENTRO DE COMPO-->
+
+<section class="sec-formacao" id="formacao">
+    <div class="sec-header-formacao">
+        <div class="header-titulo">
+            <span class="badge-tag">PRANCHETA TÁTICA</span>
+            <h2>Disposição Tática (2D)</h2>
+        </div>
+        
+        <!-- Menu Tático -->
+        <div class="controles-esquema">
+            <span class="label-esquema">Formação:</span>
+            <div class="segmented-control">
+                <button type="button" class="btn-esquema active" data-esquema="4-4-2">4-4-2</button>
+                <button type="button" class="btn-esquema" data-esquema="4-3-3">4-3-3</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Arena 2D Horizontal -->
+    <div class="campo-container-2d">
+        <div class="campo-gramado-2d" id="campoGramado">
+            <!-- Linhas e Marcações do Campo 2D Horizontal -->
+            <div class="linha-meio-vertical"></div>
+            <div class="circulo-central"></div>
+            <div class="ponto-central"></div>
+            
+            <!-- Áreas Laterais (Esquerda e Direita) -->
+            <div class="area-grande area-esquerda">
+                <div class="pequena-area"></div>
+            </div>
+            <div class="area-grande area-direita">
+                <div class="pequena-area"></div>
+            </div>
+
+            <!-- Banderolas de Escanteio -->
+            <div class="escanteio escanteio-tl"></div>
+            <div class="escanteio escanteio-tr"></div>
+            <div class="escanteio escanteio-bl"></div>
+            <div class="escanteio escanteio-br"></div>
+
+            <!-- TIME ADVERSÁRIO (Lado Direito - Pinos Vermelhos) -->
+            <div class="time-adversario" id="timeAdversario"></div>
+
+            <!-- TIME PRINCIPAL (Lado Esquerdo - Cards Interativos) -->
+            <div class="time-principal" id="timePrincipal"></div>
+        </div>
+    </div>
+</section>
+
+<!-- SECTION QUE TRATA DA GALERIA DE FOTOS DO TIME-->
+
+<section class="sec-galeria">
+    <div class="sec-header-galeria" id="galeria">
+        <span class="badge-tag">Momentos & Conquistas</span>
+        <h2>Galeria em Ação</h2>
+    </div>
+
+    <div class="galeria">
+        <div class="cards-galeria">
+            <!-- CARD 1: Basta adicionar mais imagens separadas por vírgula em data-images -->
+            <div class="card-foto foto-destaque" data-title="Destaque do Time" data-category="Atleta" data-images="./img/Enajelo-img.png, ./img/ft-sogronis-6.jpg, ./img/ft-sogronis-7.jpg">
+                <img src="./img/Enajelo-img.png" alt="Atleta em destaque" class="img-galeria" loading="lazy">
+                <div class="overlay-galeria">
+                    <span class="categoria-foto">Atleta</span>
+                    <h3>Destaque do Time</h3>
+                    <span class="badge-qtd-fotos"><i class="fa-solid fa-images"></i> + Fotos</span>
+                </div>
+            </div>
+
+            <!-- CARD 2 -->
+            <div class="card-foto" data-title="Equipe Reunida" data-category="Elenco" data-images="./img/torcida-2.jpg, ./img/torcida-1.jpg, ./img/ft-sogronis-time2.jpg, ./img/ft-sogronis-4.jpg, ./img/ft-sogronis-5.jpg">
+                <img src="./img/foto-sogronis-time.jpg" alt="Foto da equipe" class="img-galeria" loading="lazy">
+                <div class="overlay-galeria">
+                    <span class="categoria-foto">Elenco</span>
+                    <h3>Equipe Reunida</h3>
+                    <span class="badge-qtd-fotos"><i class="fa-solid fa-images"></i> + Fotos</span>
+                </div>
+            </div>
+
+            <!-- CARD 3 -->
+            <div class="card-foto" data-title="Em Campo" data-category="Partida" data-images="./img/time-2.jpg, ./img/time-1.jpg, ../img/time-3.jpg, ./img/jogos-cidade.jpg">
+                <img src="./img/time-2.jpg" alt="Lance da partida" class="img-galeria" loading="lazy">
+                <div class="overlay-galeria">
+                    <span class="categoria-foto">Partida</span>
+                    <h3>Em Campo</h3>
+                    <span class="badge-qtd-fotos"><i class="fa-solid fa-images"></i> + Fotos</span>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- ESTRUTURA DO MODAL LIGHTBOX / CARROSSEL EM DESTAQUE -->
+    <div id="lightbox-modal" class="lightbox-modal">
+        <span class="btn-fechar">&times;</span>
+        
+        <button class="nav-btn prev-btn">&#10094;</button>
+        
+        <div class="lightbox-conteudo">
+            <div class="lightbox-info">
+                <span id="lightbox-categoria">CATEGORIA</span>
+                <h3 id="lightbox-titulo">Título do Álbum</h3>
+                <span id="lightbox-contador">1 / 1</span>
+            </div>
+            
+            <div class="lightbox-img-wrapper">
+                <img id="lightbox-img" src="" alt="Foto em destaque">
+            </div>
+        </div>
+        
+        <button class="nav-btn next-btn">&#10095;</button>
+    </div>
+</section>
+
+<!-- ==========================================================================
+   ENCERRAMENTO: BANNER ESTILO CAMISA (DOURADO, PRETO E BRANCO)
+   ========================================================================== -->
+<section class="sec-final-camisa">
+    
+    <!-- Textura de Camisa e Listras de Fardamento Esportivo -->
+    <div class="textura-tecido-overlay"></div>
+    <div class="listras-fardamento"></div>
+
+    <div class="conteudo-camisa-container">
+        
+        <!-- Tag Superior Estilo Etiqueta de Uniforme em Dourado -->
+        <div class="etiqueta-gola">
+            <span class="linha-costura-ouro"></span>
+            <span class="texto-etiqueta">EQUIPAMENTO OFICIAL • 2003</span>
+            <span class="linha-costura-ouro"></span>
+        </div>
+
+        <!-- Escudo Central com Relevo e Aura Dourada -->
+        <div class="escudo-camisa-wrapper">
+            <div class="aura-tecido-ouro"></div>
+            <img src="./img/escudo-time.png" alt="Escudo Sogroni's F.S.A" class="escudo-patch">
+        </div>
+
+        <!-- Tipografia de Impacto (Branco & Dourado) -->
+        <div class="texto-camisa">
+            <h2 class="marca-sogronis">SOGRONI'S F.S.A</h2>
+            <p class="slogan-camisa">TRADIÇÃO • RAÇA • DESDE 2003</p>
+        </div>
+
+        <!-- Selo de Autenticidade em Dourado -->
+        <div class="selo-autenticidade">
+            <i class="fa-solid fa-shield-halved"></i>
+            <span>PRODUTO DE TRADIÇÃO</span>
+        </div>
+
+    </div>
+
+</section>
+
+    </main>
+
+<!-- ==========================================================================
+   RODAPÉ CONCEITO: ARQUIBANCADA & TRAVE (SOGRONI'S F.S.A)
+   ========================================================================== -->
+<footer class="footer-estadio">
+    
+    <!-- Grade Metálica Superior / Iluminação Neon Dourada -->
+    <div class="estadio-luz-topo"></div>
+
+    <!-- Escudo Central "Saindo" da Estrutura -->
+    <div class="estadio-escudo-wrapper">
+        <div class="escudo-brilho-bg"></div>
+        <img src="./img/escudo-time.png" alt="Escudo Sogroni's F.S.A" class="escudo-central-gigante">
+    </div>
+
+    <div class="estadio-container">
+        
+        <!-- BLOP 1: Placa Metálica de Localização da Várzea -->
+        <div class="estadio-bloco bloco-localizacao">
+            <div class="placa-rua-metalica">
+                <div class="placa-icone">
+                    <i class="fa-solid fa-map-pin"></i>
+                </div>
+                <div class="placa-info">
+                    <span class="placa-bairro">JARDIM RINCÃO</span>
+                    <span class="placa-zona">ZONA NORTE • SÃO PAULO</span>
+                </div>
+            </div>
+            <p class="estadio-slogan">
+                A tradição da Zona Norte em campo. Desde 2003 mantendo a essência do futebol de várzea.
+            </p>
+        </div>
+
+        <!-- BLOP 2: Menu Estilo Placar Eletrônico -->
+        <div class="estadio-bloco bloco-navegacao">
+            <h4 class="estadio-titulo-secao"><i class="fa-solid fa-bars-staggered"></i> NAVEGAÇÃO</h4>
+            <nav class="estadio-nav">
+                <a href="#"><i class="fa-solid fa-angle-right"></i> Início</a>
+                <a href="#resultados"><i class="fa-solid fa-angle-right"></i> Resultado</a>
+                <a href="#elenco"><i class="fa-solid fa-angle-right"></i> Elenco & Diretoria</a>
+                <a href="#formacao"><i class="fa-solid fa-angle-right"></i> Formação</a>
+                <a href="#galeria"><i class="fa-solid fa-angle-right"></i> Galeria</a>
+            </nav>
+        </div>
+
+        <!-- BLOP 3: Redes Sociais & Contato -->
+        <div class="estadio-bloco bloco-redes">
+            <h4 class="estadio-titulo-secao"><i class="fa-solid fa-share-nodes"></i> CONEXÃO VÁRZEA</h4>
+            <p class="estadio-redes-txt">Siga nossas redes e fique por dentro das partidas:</p>
+            
+            <div class="estadio-botoes-redes">
+                <a href="https://www.instagram.com/e.c_sogronis_f_a/" target="_blank" class="btn-estadio-rede" title="Instagram">
+                    <i class="fa-brands fa-instagram"></i>
+                </a>
+                <a href="https://facebook.com" target="_blank" class="btn-estadio-rede" title="Facebook">
+                    <i class="fa-brands fa-facebook-f"></i>
+                </a>
+                <a href="https://wa.me/5511999999999" target="_blank" class="btn-estadio-rede btn-estadio-wa" title="WhatsApp">
+                    <i class="fa-brands fa-whatsapp"></i>
+                </a>
+            </div>
+        </div>
+
+    </div>
+
+    <!-- BARRA INFERIOR: COPYRIGHT & ASSINATURA DIGITAL @RSTEC -->
+    <div class="estadio-rodape-inferior">
+        <div class="inferior-container">
+            <p class="copy-estadio">
+                &copy; 2026 <strong>SOGRONI'S F.S.A</strong> — Todos os direitos reservados.
+            </p>
+
+            <div class="assinatura-rstec-wrapper">
+                <span class="txt-dev">Site desenvolvido por</span>
+                <a href="https://instagram.com/rstec" target="_blank" class="tag-tech-rstec">
+                    <span class="tech-dot"></span>
+                    <i class="fa-solid fa-code"></i>
+                    <strong>@rstec</strong>
+                </a>
+            </div>
+        </div>
+    </div>
+
+</footer>
+
+    <script src="./script.js"></script>
+</body>
+</html>

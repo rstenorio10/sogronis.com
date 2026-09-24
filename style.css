@@ -1,0 +1,2657 @@
+/* ==========================================================================
+   VARIÁVEIS DE CORES & CONFIGURAÇÕES GERAIS
+   ========================================================================== */
+:root {
+    /* Tons Claros para o Fundo */
+    --bg-light: #f8f9fa;
+    --bg-white: #ffffff;
+    
+    /* Tons Dourados/Bege Luxo */
+    --gold-primary: #D4AF37;
+    --gold-hover: #C5A059;
+    --gold-light: #F4E8C1;
+    --beige-accent: #E8DCC4;
+
+    /* Tons Escuros (Preto e Grafite Premium) */
+    --black-primary: #111111;
+    --black-soft: #1a1a1a;
+    --text-muted: #666666;
+
+    /* Fontes */
+    --font-title: 'Cinzel', serif;
+    --font-body: 'Plus Jakarta Sans', sans-serif;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+  scroll-padding-top: 80px; /* Ajuste para o tamanho exato do seu header */
+}
+
+body {
+    font-family: var(--font-body);
+    background-color: #f3f4f6;
+}
+
+/* ==========================================================================
+   HEADER PRINCIPAL
+   ========================================================================== */
+.header {
+    width: 100%;
+    background-color: var(--bg-light);
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.06);
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    border-bottom: 2px solid var(--beige-accent);
+}
+
+/* --------------------------------------------------------------------------
+   1. BARRA SUPERIOR DE PATROCINADORES (LETREIRO ROTATIVO)
+   -------------------------------------------------------------------------- */
+.top-sponsor-bar {
+    background: linear-gradient(90deg, var(--black-primary) 0%, var(--black-soft) 100%);
+    color: var(--bg-white);
+    display: flex;
+    align-items: center;
+    padding: 6px 24px;
+    font-size: 0.75rem;
+    overflow: hidden;
+    border-bottom: 1px solid rgba(212, 175, 55, 0.3);
+}
+
+.sponsor-label {
+    font-weight: 800;
+    color: var(--gold-primary);
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    white-space: nowrap;
+    padding-right: 20px;
+    border-right: 1px solid rgba(255, 255, 255, 0.15);
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    z-index: 2;
+}
+
+.patrocinios-wrapper {
+    overflow: hidden;
+    white-space: nowrap;
+    width: 100%;
+}
+
+.patrocinios-track {
+    display: inline-flex;
+    align-items: center;
+    gap: 16px;
+    animation: marquee 20s linear infinite;
+}
+
+.patrocinios-wrapper:hover .patrocinios-track {
+    animation-play-state: paused;
+}
+
+.patrocinio-item {
+    font-weight: 600;
+    color: #e2e8f0;
+    transition: color 0.3s ease;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    gap: 6px;
+}
+
+.patrocinio-item i {
+    color: var(--gold-primary);
+}
+
+.patrocinio-item:hover {
+    color: var(--gold-primary);
+}
+
+.divider {
+    color: var(--gold-primary);
+    opacity: 0.5;
+}
+
+@keyframes marquee {
+    0% { transform: translateX(0); }
+    100% { transform: translateX(-50%); }
+}
+
+/* --------------------------------------------------------------------------
+   2. MENU DE NAVEGAÇÃO PRINCIPAL
+   -------------------------------------------------------------------------- */
+.nav-container {
+    max-width: 1280px;
+    margin: 0 auto;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 12px 24px;
+    background-color: var(--bg-light);
+}
+
+/* Brand Logo / Escudo */
+.logo-link {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    text-decoration: none;
+}
+
+.logo-badge {
+    width: 42px;
+    height: 42px;
+    background: linear-gradient(135deg, var(--black-primary), var(--black-soft));
+    border: 2px solid var(--gold-primary);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--gold-primary);
+    font-size: 1.2rem;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
+    transition: transform 0.3s ease;
+}
+
+.logo-link:hover .logo-badge {
+    transform: scale(1.08) rotate(-5deg);
+}
+
+.brand-name {
+    font-family: var(--font-title);
+    font-size: 1.4rem;
+    font-weight: 900;
+    color: var(--black-primary);
+    letter-spacing: 1px;
+}
+
+.gold-text {
+    color: var(--gold-primary);
+}
+
+/* Links do Menu */
+.nav-links {
+    display: flex;
+    align-items: center;
+    list-style: none;
+    gap: 28px;
+}
+
+.nav-links a {
+    text-decoration: none;
+    color: var(--black-primary);
+    font-weight: 700;
+    font-size: 0.92rem;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    position: relative;
+    padding: 6px 0;
+    transition: color 0.3s ease;
+}
+
+.nav-links a::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 0%;
+    height: 3px;
+    background-color: var(--gold-primary);
+    border-radius: 2px;
+    transition: width 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+}
+
+.nav-links a:hover,
+.nav-links a.active {
+    color: var(--gold-hover);
+}
+
+.nav-links a:hover::after,
+.nav-links a.active::after {
+    width: 100%;
+}
+
+/* Redes Sociais e Botão de Ação */
+.nav-actions {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+}
+
+.social-icons {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.social-btn {
+    width: 36px;
+    height: 36px;
+    border-radius: 50%;
+    background-color: var(--bg-white);
+    border: 1px solid var(--beige-accent);
+    color: var(--black-primary);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-decoration: none;
+    font-size: 0.95rem;
+    transition: all 0.3s ease;
+}
+
+.social-btn:hover {
+    background-color: var(--black-primary);
+    color: var(--gold-primary);
+    border-color: var(--black-primary);
+    transform: translateY(-2px);
+}
+
+/* Botão Principal Dourado/Preto */
+.btn-gold-action {
+    background: linear-gradient(135deg, var(--gold-primary), var(--gold-hover));
+    color: var(--black-primary);
+    font-weight: 800;
+    font-size: 0.85rem;
+    text-transform: uppercase;
+    letter-spacing: 0.8px;
+    padding: 10px 20px;
+    border-radius: 30px;
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    box-shadow: 0 4px 12px rgba(212, 175, 55, 0.3);
+    transition: all 0.3s ease;
+}
+
+.btn-gold-action:hover {
+    background: var(--black-primary);
+    color: var(--gold-primary);
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.25);
+    transform: translateY(-2px);
+}
+
+/* RESPONSIVIDADE (Mobile) */
+@media (max-width: 900px) {
+    .nav-links {
+        display: none; /* Pode ser expandido futuramente para menu hambúrguer */
+    }
+    .top-sponsor-bar {
+        padding: 6px 12px;
+    }
+    .sponsor-label {
+        font-size: 0.65rem;
+    }
+}
+/* Section principal onde veremos os destaques da semana, proximos jogos e informações relevantes ao time*/
+
+
+
+/* ==========================================================================
+   BLOCO: PRÓXIMO JOGO (Altura de 100px)
+   ========================================================================== */
+.prox-jogo {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    max-width: 900px; /* Alinha bem no meio do container */
+    height: 100px;
+    margin: 10px auto;
+    padding: 10px 20px;
+    
+    /* Fundo Claro com Borda Bege Ouro */
+    background-color: #ffffff;
+    border: 2px solid #E8DCC4;
+    border-radius: 12px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+    box-sizing: border-box;
+}
+
+/* Título com os Times e Escudos na mesma linha */
+.prox-jogo h2 {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 12px;
+    font-family: 'Cinzel', serif, sans-serif;
+    font-size: 1.15rem;
+    font-weight: 800;
+    color: #111111; /* Preto para destaque */
+    margin: 0;
+    padding: 0;
+}
+
+/* Nomes dos times */
+.prox-jogo .nome-time {
+    letter-spacing: 0.5px;
+}
+
+/* Escudos dos times */
+.prox-jogo .escudo-time {
+    width: 32px;
+    height: 32px;
+    object-fit: contain;
+    border-radius: 50%;
+    border: 1px solid #D4AF37; /* Borda Dourada */
+    background-color: #f8f9fa;
+   
+}
+
+.escudo-time-2{
+    width: 32px;
+    height: 32px;
+    object-fit: contain;
+    border-radius: 50%;
+    border: 1px solid #D4AF37; /* Borda Dourada */
+    background-color: #f8f9fa;
+    
+}
+
+/* Destaque para o "X" central */
+.prox-jogo .vs-text {
+    color: #D4AF37; /* Dourado */
+    font-weight: 900;
+    font-size: 0.95rem;
+    background-color: #111111; /* Fundo Preto */
+    padding: 2px 8px;
+    border-radius: 6px;
+    margin: 0 4px;
+}
+
+/* Texto da Data e Hora */
+.prox-jogo p {
+    font-size: 0.82rem;
+    font-weight: 700;
+    color: #555555;
+    margin: 4px 0 0 0;
+    display: flex;
+    align-items: center;
+    gap: 6px;
+}
+
+.prox-jogo p i {
+    color: #C5A059; /* Ícone Bege/Dourado */
+}
+
+
+/* ==========================================================================
+   SECTION: DESTAQUE (BANNER ROTATIVO - 94% DA LARGURA DA TELA)
+   ========================================================================== */
+.sec-destaque {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    margin-top: 0px;   /* Margem superior reduzida para aproximar da div de cima */
+    margin-bottom: 100px;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.destaque {
+    width: 94%;        /* Ocupa exatamente 94% da largura da tela */
+    max-width: 100%;   /* Permite crescer sem travar em limites menores */
+    height: 400px;     /* Altura mantida em 400px */
+    position: relative;
+    border-radius: 16px; /* Cantos arredondados restaurados */
+    border: 2px solid #E8DCC4; /* Borda Bege Ouro */
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.08);
+    overflow: hidden;
+    background-color: #111111;
+    /* Pausa a transição dos slides */
+
+}
+
+.destaque:hover .slider-track {
+    animation-play-state: paused;
+}
+
+/* Pausa a barra de progresso do tempo */
+.destaque:hover .timer-line {
+    animation-play-state: paused;
+}
+
+/* Trilho com largura de 500% (100% para cada um dos 5 slides) */
+.slider-track {
+    display: flex;
+    width: 500%;
+    height: 100%;
+    animation: rotateBanner 15s infinite ease-in-out;
+}
+
+/* Animação CSS pura: troca a cada 3s (total 15s) */
+@keyframes rotateBanner {
+    0%, 16%   { transform: translateX(0%); }         /* Slide 1 (0s - 3s) */
+    20%, 36%  { transform: translateX(-20%); }       /* Slide 2 (3s - 6s) */
+    40%, 56%  { transform: translateX(-40%); }       /* Slide 3 (6s - 9s) */
+    60%, 76%  { transform: translateX(-60%); }       /* Slide 4 (9s - 12s) */
+    80%, 96%  { transform: translateX(-80%); }       /* Slide 5 (12s - 15s) */
+    100%      { transform: translateX(0%); }         /* Volta ao Slide 1 */
+}
+
+.slide {
+    width: 20%; /* 100% / 5 imagens */
+    height: 100%;
+    position: relative;
+    flex-shrink: 0;
+}
+
+.slide img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    
+}
+
+/* Máscara de degradê sobre a imagem */
+.slide::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(
+        to right, 
+        rgba(17, 17, 17, 0.9) 0%, 
+        rgba(17, 17, 17, 0.5) 50%, 
+        transparent 100%
+    );
+}
+
+/* Conteúdo sobre o Banner */
+.banner-content {
+    position: absolute;
+    bottom: 40px;
+    left: 40px;
+    z-index: 2;
+    max-width: 650px;
+    color: #ffffff;
+    text-align: left;
+}
+
+.badge-destaque {
+    display: inline-block;
+    background-color: #111111;
+    color: #D4AF37;
+    font-size: 0.75rem;
+    font-weight: 800;
+    letter-spacing: 1.5px;
+    padding: 5px 12px;
+    border-radius: 6px;
+    border: 1px solid #D4AF37;
+    margin-bottom: 12px;
+}
+
+.banner-content h1 {
+    font-family: 'Cinzel', serif, sans-serif;
+    font-size: 2.2rem;
+    font-weight: 900;
+    margin: 0 0 8px 0;
+    color: #ffffff;
+    line-height: 1.1;
+    text-shadow: 0 2px 4px rgba(0,0,0,0.5);
+}
+
+.banner-content h1 span {
+    color: #D4AF37;
+}
+
+.banner-content p {
+    font-size: 1rem;
+    color: #dddddd;
+    margin: 0;
+    line-height: 1.4;
+}
+
+/* Linha Indicadora de Tempo */
+.timer-line {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    height: 4px;
+    background: linear-gradient(to right, #D4AF37, #E8DCC4);
+    z-index: 3;
+    animation: lineProgress 3s infinite linear;
+}
+
+@keyframes lineProgress {
+    0%   { width: 0%; }
+    100% { width: 100%; }
+}
+
+/* Responsividade Mobile */
+@media (max-width: 768px) {
+    .destaque {
+        width: 94%;
+        height: 280px;
+    }
+
+    .banner-content {
+        left: 20px;
+        bottom: 25px;
+        right: 20px;
+    }
+
+    .banner-content h1 {
+        font-size: 1.4rem;
+    }
+
+    .banner-content p {
+        font-size: 0.85rem;
+    }
+}
+
+/* ==========================================================================
+   SECTION: RESULTADOS (LARGURA 94%, DESIGN MODERNO E SEM CORTE DE ALTURA)
+   ========================================================================== */
+.sec-resultados {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 94%;
+    max-width: 1400px;
+    margin: auto;
+    margin-top: 50px;
+    margin-bottom: 50px;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Cabeçalho alinhado nas extremidades da tela */
+.sec-header-resultado {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    margin-bottom: 20px;
+}
+
+.sec-header-resultado h2 {
+    font-family: 'Cinzel', serif, sans-serif;
+    font-size: 1.6rem;
+    font-weight: 800;
+    color: #111111;
+    margin: 0;
+    position: relative;
+    padding-left: 12px;
+}
+
+.sec-header-resultado h2::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 4px;
+    height: 80%;
+    background-color: #D4AF37;
+    border-radius: 2px;
+}
+
+/* Botão Próximos na borda do width */
+.btn-proximos {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    background-color: #111111;
+    color: #D4AF37;
+    border: 1px solid #D4AF37;
+    padding: 8px 16px;
+    border-radius: 8px;
+    font-size: 0.85rem;
+    font-weight: 700;
+    cursor: pointer;
+    transition: all 0.2s ease;
+}
+
+.btn-proximos:hover {
+    background-color: #D4AF37;
+    color: #111111;
+}
+
+/* Grid com rolagem nativa dos cards */
+.resultados {
+    display: flex;
+    gap: 20px;
+    width: 100%;
+    overflow-x: auto;
+    scroll-behavior: smooth;
+    padding: 10px 5px 20px 5px; /* Espaço para sombra sem cortar o card */
+    box-sizing: border-box;
+    scrollbar-width: none; /* Oculta a barra de rolagem no Firefox */
+}
+
+.resultados::-webkit-scrollbar {
+    display: none; /* Oculta a barra de rolagem no Chrome/Safari */
+}
+
+/* Card Visualmente Estruturado */
+.card {
+    flex: 0 0 calc(33.333% - 14px); /* 3 cards visíveis por vez em desktop */
+    min-width: 300px;
+    background: #ffffff;
+    border: 1px solid #E8DCC4;
+    border-radius: 12px;
+    padding: 20px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.card:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
+}
+
+/* Topo do Card: Data */
+.data-resultado {
+    text-align: center;
+    border-bottom: 1px dashed #e0e0e0;
+    padding-bottom: 12px;
+    margin-bottom: 16px;
+}
+
+.data-resultado h3 {
+    font-size: 0.85rem;
+    font-weight: 700;
+    color: #666666;
+    margin: 0;
+    text-transform: uppercase;
+}
+
+.data-resultado h3 span {
+    color: #111111;
+    font-weight: 800;
+}
+
+/* Confronto e Placar */
+.times {
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+    gap: 10px;
+}
+
+.time-casa {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.time-casa h4 {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-size: 0.9rem;
+    font-weight: 700;
+    color: #111111;
+    margin: 0;
+}
+
+.time-casa img {
+    width: 30px;
+    height: 30px;
+    object-fit: contain;
+}
+
+.time-casa span {
+    font-family: 'Cinzel', serif;
+    font-size: 1.3rem;
+    font-weight: 900;
+    background-color: #f5f5f5;
+    border: 1px solid #E8DCC4;
+    color: #111111;
+    padding: 2px 10px;
+    border-radius: 6px;
+}
+
+.times p {
+    font-size: 0.85rem;
+    font-weight: 800;
+    color: #D4AF37;
+    margin: 0;
+}
+
+/* Responsividade Mobile */
+@media (max-width: 992px) {
+    .card {
+        flex: 0 0 calc(50% - 10px); /* 2 cards visíveis em tablets */
+    }
+}
+
+@media (max-width: 650px) {
+    .card {
+        flex: 0 0 100%; /* 1 card por vez no celular */
+    }
+}
+
+.nomeTime{
+    display: flex;
+    gap: 95px;
+    margin-left: 40px;
+    margin-top: 10px;
+}
+
+/* Section Elenco parte do codigo vamos criar cards rotativos que mostre os atletas e seus dados mais relevante*/
+
+/* ==========================================================================
+   SEÇÃO ELENCO (ALTURA 220PX E TÍTULO ALINHADO)
+   ========================================================================== */
+.sec-elenco {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%; /* Largura total para alinhar com o container pai */
+    max-width: 1200px;
+    margin: 40px auto;
+    margin-bottom: 100px;
+    padding: 0 20px; /* Padding padrão de alinhamento lateral */
+    box-sizing: border-box;
+}
+
+.sec-header-elenco {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    margin-bottom: 20px;
+    padding: 0; /* Garante o alinhamento com a borda do container */
+}
+
+.sec-header-elenco h2 {
+    font-family: 'Cinzel', serif, sans-serif;
+    font-size: 1.5rem;
+    font-weight: 800;
+    color: #111111;
+    margin: 0;
+    position: relative;
+    padding-left: 12px;
+}
+
+.sec-header-elenco h2::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 4px;
+    height: 80%;
+    background-color: #D4AF37;
+    border-radius: 2px;
+}
+
+/* CARROSSEL TRILHO E VIEWPORT */
+.elenco-viewport {
+    width: 100%;
+    overflow: hidden;
+    padding: 8px 0;
+}
+
+.elenco-track {
+    display: flex;
+    gap: 16px;
+    transition: transform 0.6s cubic-bezier(0.25, 1, 0.5, 1);
+}
+
+/* CARD INDIVIDUAL DO ATLETA (ALTURA 220PX) */
+.itens-card {
+    flex: 0 0 calc((100% - 32px) / 3);
+    height: 220px; /* Altura ajustada para 220px */
+    background: #0f0f11;
+    border: 1px solid #2a2a30;
+    border-radius: 14px;
+    position: relative;
+    overflow: hidden;
+    display: flex;
+    box-sizing: border-box;
+    padding: 12px;
+    gap: 12px;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.25);
+    transition: transform 0.3s ease, border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.itens-card:hover {
+    transform: translateY(-5px);
+    border-color: #D4AF37;
+    box-shadow: 0 12px 24px rgba(212, 175, 55, 0.2);
+}
+
+/* Arte Geométrica no Fundo do Card */
+.card-arte-bg {
+    position: absolute;
+    top: -20%;
+    right: -20%;
+    width: 120%;
+    height: 120%;
+    background: radial-gradient(circle at 80% 20%, rgba(212, 175, 55, 0.12) 0%, transparent 60%);
+    pointer-events: none;
+    z-index: 1;
+}
+
+/* COLUNA DA FOTO (ESQUERDA) */
+.foto-coluna {
+    width: 44%;
+    height: 100%;
+    position: relative;
+    border-radius: 10px;
+    overflow: hidden;
+    background: #18181c;
+    z-index: 2;
+}
+
+.img-jogador {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: top center;
+    transition: transform 0.4s ease;
+}
+
+.itens-card:hover .img-jogador {
+    transform: scale(1.06);
+}
+
+.badge-posicao {
+    position: absolute;
+    bottom: 6px;
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: rgba(17, 17, 17, 0.9);
+    color: #D4AF37;
+    border: 1px solid #D4AF37;
+    font-size: 0.6rem;
+    font-weight: 800;
+    padding: 3px 7px;
+    border-radius: 10px;
+    white-space: nowrap;
+    backdrop-filter: blur(2px);
+}
+
+/* COLUNA DAS INFORMAÇÕES (DIREITA) */
+.info-coluna {
+    width: 56%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    z-index: 2;
+    padding: 2px 0;
+}
+
+.header-atleta {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    padding-bottom: 6px;
+}
+
+.header-atleta h3 {
+    margin: 0;
+    font-family: 'Cinzel', serif, sans-serif;
+    font-size: 0.95rem;
+    font-weight: 800;
+    color: #ffffff;
+    line-height: 1.1;
+    text-transform: uppercase;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.numero-camisa {
+    font-family: 'Cinzel', serif;
+    font-size: 0.95rem;
+    font-weight: 900;
+    color: #D4AF37;
+}
+
+/* Especificações Rápidas */
+.specs-grid {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+    background: rgba(255, 255, 255, 0.03);
+    padding: 6px 8px;
+    border-radius: 6px;
+    border: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.spec-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.label {
+    font-size: 0.58rem;
+    color: #888888;
+    font-weight: 700;
+    letter-spacing: 0.5px;
+}
+
+.valor {
+    font-size: 0.7rem;
+    color: #ffffff;
+    font-weight: 700;
+}
+
+.cidade-natal {
+    display: flex;
+    flex-direction: column;
+    gap: 1px;
+}
+
+.cidade-natal p {
+    margin: 0;
+    font-size: 0.68rem;
+    color: #cccccc;
+    font-weight: 600;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+/* Botão Instagram */
+.btn-instagram {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 6px;
+    background: linear-gradient(135deg, #833ab4, #fd1d1d, #fcb045);
+    color: #ffffff;
+    padding: 6px 0;
+    border-radius: 6px;
+    font-size: 0.7rem;
+    font-weight: 700;
+    text-decoration: none;
+    transition: opacity 0.2s ease, transform 0.2s ease;
+}
+
+.btn-instagram:hover {
+    opacity: 0.9;
+    transform: scale(1.02);
+}
+
+/* CONTROLES DO CARROSSEL */
+.elenco-controles {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.btn-elenco-nav {
+    background: #111111;
+    color: #D4AF37;
+    border: 1px solid #D4AF37;
+    width: 28px;
+    height: 28px;
+    border-radius: 50%;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 0.75rem;
+    transition: all 0.2s ease;
+}
+
+.btn-elenco-nav:hover {
+    background: #D4AF37;
+    color: #111111;
+}
+
+.elenco-dots {
+    display: flex;
+    gap: 6px;
+}
+
+.dot {
+    width: 7px;
+    height: 7px;
+    background: #ccc;
+    border-radius: 50%;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.dot.active {
+    background: #D4AF37;
+    width: 18px;
+    border-radius: 4px;
+}
+
+/* RESPONSIVIDADE */
+@media (max-width: 900px) {
+    .itens-card {
+        flex: 0 0 calc((100% - 16px) / 2);
+    }
+}
+
+@media (max-width: 550px) {
+    .itens-card {
+        flex: 0 0 100%;
+    }
+}
+
+
+/* ==========================================================================
+   SEÇÃO: FORMAÇÃO TÁTICA 2D HORIZONTAL (CAMPO 70% DA LARGURA)
+   ========================================================================== */
+.sec-formacao {
+    width: 100%;
+    max-width: 1400px;
+    margin: 40px auto;
+    margin-bottom: 50px;
+    padding: 0 20px;
+    box-sizing: border-box;
+    font-family: 'Inter', system-ui, -apple-system, sans-serif;
+}
+
+/* Header & Titulo */
+.sec-header-formacao {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+    flex-wrap: wrap;
+    gap: 15px;
+}
+
+.header-titulo {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+}
+
+.badge-tag {
+    font-size: 0.7rem;
+    font-weight: 800;
+    color: #D4AF37;
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+}
+
+.header-titulo h2 {
+    font-size: 1.75rem;
+    font-weight: 800;
+    color: #0f172a;
+    margin: 0;
+}
+
+/* Menu de Esquemas */
+.controles-esquema {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+.label-esquema {
+    font-size: 0.85rem;
+    font-weight: 700;
+    color: #475569;
+}
+
+.segmented-control {
+    display: flex;
+    background: #0f172a;
+    padding: 4px;
+    border-radius: 10px;
+    border: 1px solid rgba(212, 175, 55, 0.3);
+}
+
+.btn-esquema {
+    background: transparent;
+    border: none;
+    color: #94a3b8;
+    padding: 8px 18px;
+    font-size: 0.85rem;
+    font-weight: 700;
+    border-radius: 7px;
+    cursor: pointer;
+    transition: all 0.25s ease;
+}
+
+.btn-esquema.active {
+    background: #D4AF37;
+    color: #0f172a;
+    box-shadow: 0 2px 10px rgba(212, 175, 55, 0.4);
+}
+
+/* Container do Campo com largura de 70% */
+.campo-container-2d {
+    width: 50%;
+    margin: 0 auto;
+    background: #0a0f1d;
+    padding: 12px;
+    border-radius: 16px;
+    box-sizing: border-box;
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.35);
+    margin-top: 60px;
+}
+
+/* Gramado Plano 2D Horizontal (Proporção 16:9) */
+.campo-gramado-2d {
+    width: 100%;
+    height: 300px;
+    background: repeating-linear-gradient(
+        90deg,
+        #15803d 0px,
+        #15803d 50px,
+        #166534 50px,
+        #166534 100px
+    );
+    border: 3px solid rgba(255, 255, 255, 0.9);
+    border-radius: 10px;
+    position: relative;
+    overflow: hidden;
+}
+
+/* Marcações do Campo Horizontal (Visão Superior 2D) */
+.linha-meio-vertical {
+    position: absolute;
+    top: 0;
+    left: 50%;
+    width: 2px;
+    height: 100%;
+    background: rgba(255, 255, 255, 0.85);
+    transform: translateX(-50%);
+}
+
+.circulo-central {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 100px;
+    height: 100px;
+    border: 2px solid rgba(255, 255, 255, 0.85);
+    border-radius: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.ponto-central {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 8px;
+    height: 8px;
+    background: #ffffff;
+    border-radius: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.area-grande {
+    position: absolute;
+    top: 20%;
+    height: 60%;
+    width: 16%;
+    border: 2px solid rgba(255, 255, 255, 0.85);
+}
+
+.pequena-area {
+    position: absolute;
+    top: 25%;
+    height: 50%;
+    width: 45%;
+    border: 2px solid rgba(255, 255, 255, 0.85);
+}
+
+.area-esquerda { left: 0; border-left: none; }
+.area-esquerda .pequena-area { left: 0; border-left: none; }
+
+.area-direita { right: 0; border-right: none; }
+.area-direita .pequena-area { right: 0; border-right: none; }
+
+/* Escanteios */
+.escanteio {
+    position: absolute;
+    width: 14px;
+    height: 14px;
+    border: 2px solid rgba(255, 255, 255, 0.85);
+    border-radius: 50%;
+}
+.escanteio-tl { top: -7px; left: -7px; }
+.escanteio-tr { top: -7px; right: -7px; }
+.escanteio-bl { bottom: -7px; left: -7px; }
+.escanteio-br { bottom: -7px; right: -7px; }
+
+/* Pinos do Time Adversário (2D) */
+.pino-adv {
+    position: absolute;
+    width: 12px;
+    height: 12px;
+    background: #ef4444;
+    border: 2px solid #ffffff;
+    border-radius: 50%;
+    transform: translate(-50%, -50%);
+    box-shadow: 0 0 8px rgba(239, 68, 68, 0.8);
+}
+
+/* Card do Jogador Principal */
+.card-jogador {
+    position: absolute;
+    transform: translate(-50%, -50%);
+    cursor: pointer;
+    z-index: 10;
+    transition: left 0.5s cubic-bezier(0.4, 0, 0.2, 1), top 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.avatar-circulo {
+    width: 38px;
+    height: 38px;
+    background: #0f172a;
+    border: 2px solid #D4AF37;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.4);
+    transition: transform 0.25s ease, border-color 0.25s ease;
+}
+
+.img-jogador {
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+    object-fit: cover;
+}
+
+.badge-numero {
+    position: absolute;
+    bottom: -3px;
+    right: -3px;
+    background: #D4AF37;
+    color: #0f172a;
+    font-size: 0.55rem;
+    font-weight: 800;
+    width: 16px;
+    height: 16px;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: 1.5px solid #0f172a;
+}
+
+/* Ajuste sutil na tag do nome para não colar na borda inferior do campo */
+.tag-nome {
+    position: absolute;
+    top: 40px;
+    left: 50%;
+    transform: translateX(-50%);
+    background: rgba(15, 23, 42, 0.95);
+    color: #ffffff;
+    padding: 2px 6px;
+    border-radius: 4px;
+    font-size: 0.58rem;
+    font-weight: 700;
+    white-space: nowrap;
+    border: 1px solid rgba(212, 175, 55, 0.4);
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.5);
+}
+
+/* Hover nos Jogadores */
+.card-jogador:hover {
+    z-index: 100;
+}
+
+.card-jogador:hover .avatar-circulo {
+    transform: scale(1.2);
+    border-color: #ffffff;
+    box-shadow: 0 0 15px rgba(212, 175, 55, 0.8);
+}
+
+.card-jogador:hover .tag-nome {
+    background: #D4AF37;
+    color: #0f172a;
+}
+
+/* Responsividade para Telas Menores */
+@media (max-width: 992px) {
+    .campo-container-2d {
+        width: 100%; /* Ocupa 100% em celulares/tablets menores */
+    }
+}
+
+@media (max-width: 650px) {
+    .campo-gramado-2d {
+        height: 250px; /* Altura compacta para mobile */
+    }
+}
+
+
+/* ==========================================================================
+   SEÇÃO: GALERIA DE FOTOS (70% DE LARGURA + LIGHTBOX MODAL)
+   ========================================================================== */
+.sec-galeria {
+    width: 70%;
+    margin: 50px auto;
+    padding: 0 10px;
+    box-sizing: border-box;
+    font-family: 'Inter', system-ui, -apple-system, sans-serif;
+}
+
+.sec-header-galeria {
+    text-align: center;
+    margin-bottom: 35px;
+    margin-top: 60px;
+}
+
+.sec-header-galeria .badge-tag {
+    font-size: 0.75rem;
+    font-weight: 800;
+    color: #D4AF37;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    display: inline-block;
+    margin-bottom: 6px;
+}
+
+.sec-header-galeria h2 {
+    font-size: 2rem;
+    font-weight: 800;
+    color: #0f172a;
+    margin: 0;
+}
+
+.cards-galeria {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 58px;
+    margin-bottom: 100px;
+}
+
+.card-foto {
+    position: relative;
+    height: 240px;
+    border-radius: 16px;
+    overflow: hidden;
+    background: #0f172a;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+    cursor: pointer;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.img-galeria {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center top;
+    transition: transform 0.5s ease;
+}
+
+.overlay-galeria {
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(to top, rgba(15, 23, 42, 0.95) 0%, rgba(15, 23, 42, 0.2) 60%, transparent 100%);
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    padding: 16px;
+    box-sizing: border-box;
+}
+
+.categoria-foto {
+    font-size: 0.65rem;
+    font-weight: 800;
+    color: #D4AF37;
+    text-transform: uppercase;
+}
+
+.overlay-galeria h3 {
+    color: #ffffff;
+    font-size: 1rem;
+    font-weight: 700;
+    margin: 4px 0;
+}
+
+.badge-qtd-fotos {
+    font-size: 0.7rem;
+    color: #94a3b8;
+    font-weight: 600;
+}
+
+.card-foto:hover .img-galeria {
+    transform: scale(1.08);
+}
+
+/* ==========================================================================
+   MODAL LIGHTBOX (DESTAQUE NA TELA)
+   ========================================================================== */
+.lightbox-modal {
+    display: none;
+    position: fixed;
+    inset: 0;
+    z-index: 99999;
+    background: rgba(10, 15, 29, 0.95);
+    backdrop-filter: blur(10px);
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px;
+    box-sizing: border-box;
+}
+
+.lightbox-modal.active {
+    display: flex;
+}
+
+.lightbox-conteudo {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    max-width: 85%;
+    max-height: 90vh;
+}
+
+.lightbox-info {
+    text-align: center;
+    margin-bottom: 12px;
+}
+
+#lightbox-categoria {
+    color: #D4AF37;
+    font-size: 0.75rem;
+    font-weight: 800;
+    letter-spacing: 1.5px;
+}
+
+#lightbox-titulo {
+    color: #ffffff;
+    font-size: 1.4rem;
+    margin: 4px 0;
+}
+
+#lightbox-contador {
+    color: #94a3b8;
+    font-size: 0.85rem;
+}
+
+.lightbox-img-wrapper {
+    max-width: 100%;
+    max-height: 75vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#lightbox-img {
+    max-width: 100%;
+    max-height: 75vh;
+    object-fit: contain;
+    border-radius: 12px;
+    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.8);
+    border: 1px solid rgba(212, 175, 55, 0.3);
+}
+
+/* Botões de Navegação e Fechar */
+.btn-fechar {
+    position: absolute;
+    top: 20px;
+    right: 25px;
+    color: #ffffff;
+    font-size: 2.5rem;
+    font-weight: bold;
+    cursor: pointer;
+    transition: color 0.2s;
+    z-index: 100000;
+}
+
+.btn-fechar:hover {
+    color: #D4AF37;
+}
+
+.nav-btn {
+    background: rgba(15, 23, 42, 0.8);
+    color: #D4AF37;
+    border: 1px solid rgba(212, 175, 55, 0.4);
+    font-size: 1.8rem;
+    padding: 12px 18px;
+    border-radius: 50%;
+    cursor: pointer;
+    transition: all 0.25s ease;
+}
+
+.nav-btn:hover {
+    background: #D4AF37;
+    color: #0f172a;
+    box-shadow: 0 0 15px rgba(212, 175, 55, 0.6);
+}
+
+/* Responsividade */
+@media (max-width: 992px) {
+    .sec-galeria { width: 100%; padding: 0 20px; }
+    .cards-galeria { grid-template-columns: repeat(2, 1fr); }
+}
+
+@media (max-width: 550px) {
+    .cards-galeria { grid-template-columns: 1fr; }
+    .nav-btn { padding: 8px 12px; font-size: 1.2rem; }
+    #lightbox-img { max-height: 60vh; }
+}
+
+
+/* ==========================================================================
+   ESTILIZAÇÃO DA HISTÓRIA DO TIME (SEM TONS ESCUROS, ILUMINADO E ORGANIZADO)
+   ========================================================================== */
+
+.sec-nossa-historia {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    min-height: auto; /* Removida a altura fixa de 400px para o texto não vazar */
+    margin-top: 50px;
+    margin-bottom: 40px;
+    padding: 60px 20px;
+    box-sizing: border-box;
+    /* Fundo vibrante com degradê iluminado em tons de azul e dourado */
+    background: linear-gradient(135deg, #1e3a8a 0%, #2563eb 50%, #1e293b 100%);
+    border-radius: 30px;
+    position: relative;
+    overflow: hidden;
+    border: 2px solid rgba(212, 175, 55, 0.4);
+    box-shadow: 0 20px 50px rgba(37, 99, 235, 0.3), 0 0 35px rgba(212, 175, 55, 0.25);
+    color: #ffffff;
+    font-family: 'Inter', system-ui, -apple-system, sans-serif;
+}
+
+/* --------------------------------------------------------------------------
+   EFEITO DE FUMAÇA BRANCA / AMBIENTE LUMINOSO
+   -------------------------------------------------------------------------- */
+.fumaca-bg-container {
+    position: absolute;
+    inset: 0;
+    pointer-events: none;
+    z-index: 1;
+    overflow: hidden;
+}
+
+.luz-brilho-ouro {
+    position: absolute;
+    top: 30%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 400px;
+    height: 400px;
+    background: radial-gradient(circle, rgba(212, 175, 55, 0.35) 0%, rgba(255, 255, 255, 0.1) 60%, transparent 80%);
+    filter: blur(50px);
+    border-radius: 50%;
+    animation: pulsarLuzBrilho 5s ease-in-out infinite alternate;
+}
+
+@keyframes pulsarLuzBrilho {
+    0% { transform: translate(-50%, -50%) scale(0.85); opacity: 0.6; }
+    100% { transform: translate(-50%, -50%) scale(1.2); opacity: 1; }
+}
+
+.fumaca-nuvem {
+    position: absolute;
+    width: 200%;
+    height: 200%;
+    top: -50%;
+    left: -50%;
+    background-image: 
+        radial-gradient(circle, rgba(255, 255, 255, 0.25) 0%, rgba(255, 255, 255, 0.08) 40%, transparent 70%),
+        radial-gradient(circle at 70% 30%, rgba(240, 240, 255, 0.2) 0%, transparent 60%);
+    filter: blur(40px);
+}
+
+.fumaca-1 { animation: girofumaca 25s infinite linear; opacity: 0.6; }
+.fumaca-2 { animation: girofumaca 35s infinite ease-in-out reverse; opacity: 0.4; }
+
+@keyframes girofumaca {
+    0% { transform: rotate(0deg) scale(1); }
+    50% { transform: rotate(180deg) scale(1.15); }
+    100% { transform: rotate(360deg) scale(1); }
+}
+
+/* --------------------------------------------------------------------------
+   HEADER DA SEÇÃO
+   -------------------------------------------------------------------------- */
+.sec-header-nossa-historia {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    position: relative;
+    z-index: 2;
+    margin-bottom: 10px;
+}
+
+.badge-tag-historia {
+    font-size: 0.8rem;
+    font-weight: 800;
+    color: #fef08a;
+    letter-spacing: 2.5px;
+    background: rgba(212, 175, 55, 0.2);
+    padding: 4px 16px;
+    border-radius: 20px;
+    border: 1px solid rgba(212, 175, 55, 0.4);
+    margin-bottom: 8px;
+}
+
+.sec-header-nossa-historia h2 {
+    font-size: 2.6rem;
+    font-weight: 900;
+    color: #ffffff;
+    margin: 0;
+    text-transform: uppercase;
+    letter-spacing: 1.5px;
+    text-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+}
+
+.linha-destaque-ouro {
+    width: 90px;
+    height: 4px;
+    background: linear-gradient(90deg, transparent, #D4AF37, transparent);
+    margin-top: 10px;
+    border-radius: 2px;
+}
+
+/* Ano de Fundação Badge */
+.ano-fundacao-wrapper {
+    position: relative;
+    z-index: 2;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    background: rgba(255, 255, 255, 0.12);
+    backdrop-filter: blur(8px);
+    border: 1px solid rgba(255, 255, 255, 0.25);
+    padding: 6px 18px;
+    border-radius: 20px;
+    margin-bottom: 30px;
+}
+
+.ponto-vivo {
+    width: 8px;
+    height: 8px;
+    background-color: #22c55e;
+    border-radius: 50%;
+    box-shadow: 0 0 10px #22c55e;
+}
+
+.ano-fundacao-wrapper h3 {
+    font-size: 0.95rem;
+    font-weight: 700;
+    color: #ffffff;
+    margin: 0;
+}
+
+/* ==========================================================================
+   ESTILIZAÇÃO DA HISTÓRIA DO TIME (MÁXIMO 500PX | FUNDO DOURADO, PRETO E BRANCO)
+   ========================================================================== */
+
+.sec-nossa-historia {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    max-height: 500px; /* Limite de altura configurado */
+    height: 100%;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    padding: 20px 30px;
+    box-sizing: border-box;
+    /* Fundo Dourado Vibrante e Elegante */
+    background: linear-gradient(135deg, #d4af37 0%, #fef08a 50%, #b8860b 100%);
+    border-radius: 20px;
+    position: relative;
+    overflow: hidden;
+    border: 3px solid #111111;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+    color: #111111;
+    font-family: 'Inter', system-ui, -apple-system, sans-serif;
+}
+
+/* --------------------------------------------------------------------------
+   EFEITO DE FUMAÇA BRANCA / BRILHO DOURADO
+   -------------------------------------------------------------------------- */
+.fumaca-bg-container {
+    position: absolute;
+    inset: 0;
+    pointer-events: none;
+    z-index: 1;
+    overflow: hidden;
+}
+
+.luz-brilho-ouro {
+    position: absolute;
+    top: 50%;
+    left: 30%;
+    transform: translate(-50%, -50%);
+    width: 350px;
+    height: 350px;
+    background: radial-gradient(circle, rgba(255, 255, 255, 0.6) 0%, transparent 70%);
+    filter: blur(40px);
+    border-radius: 50%;
+}
+
+.fumaca-nuvem {
+    position: absolute;
+    width: 200%;
+    height: 200%;
+    top: -50%;
+    left: -50%;
+    background-image: 
+        radial-gradient(circle, rgba(255, 255, 255, 0.35) 0%, rgba(255, 255, 255, 0.1) 40%, transparent 70%);
+    filter: blur(30px);
+}
+
+.fumaca-1 { animation: girofumaca 25s infinite linear; opacity: 0.7; }
+.fumaca-2 { animation: girofumaca 35s infinite ease-in-out reverse; opacity: 0.5; }
+
+@keyframes girofumaca {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
+
+/* Conteúdo interno alinhado */
+.conteudo-card-historia {
+    position: relative;
+    z-index: 2;
+    width: 100%;
+    max-width: 1100px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+/* ==========================================================================
+   ARTE INTERATIVA DE ENCERRAMENTO (DORADO, PRETO E BRANCO | MÁX 500PX)
+   ========================================================================== */
+
+.sec-arte-final {
+    width: 100%;
+    max-height: 500px;
+    height: 480px;
+    margin: 30px auto;
+    padding: 20px;
+    box-sizing: border-box;
+    /* Fundo Dourado Vibrante */
+    background: radial-gradient(circle at center, #fef08a 0%, #d4af37 60%, #b8860b 100%);
+    border-radius: 24px;
+    position: relative;
+    overflow: hidden;
+    border: 4px solid #000000;
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.4), inset 0 0 50px rgba(255, 255, 255, 0.5);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-family: 'Inter', system-ui, -apple-system, sans-serif;
+}
+
+/* --------------------------------------------------------------------------
+   EFEITO DE FUMAÇA BRANCA LUMINOSA (BACKGROUND)
+   -------------------------------------------------------------------------- */
+.fumaca-wrapper-arte {
+    position: absolute;
+    inset: 0;
+    pointer-events: none;
+    z-index: 1;
+    overflow: hidden;
+}
+
+.brilho-luz-centro {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 380px;
+    height: 380px;
+    background: radial-gradient(circle, rgba(255, 255, 255, 0.8) 0%, rgba(255, 255, 255, 0.2) 60%, transparent 80%);
+    filter: blur(35px);
+    border-radius: 50%;
+}
+
+.camada-fumaca-arte {
+    position: absolute;
+    width: 200%;
+    height: 200%;
+    top: -50%;
+    left: -50%;
+    background-image: 
+        radial-gradient(circle, rgba(255, 255, 255, 0.4) 0%, rgba(255, 255, 255, 0.1) 40%, transparent 70%);
+    filter: blur(30px);
+}
+
+.fumaca-1 { animation: girofumaca 22s infinite linear; opacity: 0.8; }
+.fumaca-2 { animation: girofumaca 32s infinite linear reverse; opacity: 0.5; }
+
+@keyframes girofumaca {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
+
+/* ==========================================================================
+   ARTE INTERATIVA DE ENCERRAMENTO (PRETO E BRANCO | MÁX 500PX)
+   ========================================================================== */
+
+.sec-arte-final {
+    width: 100%;
+    max-height: 500px;
+    height: 480px;
+    margin: 30px auto;
+    padding: 20px;
+    box-sizing: border-box;
+    /* Fundo Preto Profundo com Degradê Sutil */
+    background: radial-gradient(circle at center, #18181b 0%, #09090b 100%);
+    border-radius: 24px;
+    position: relative;
+    overflow: hidden;
+    border: 2px solid #3f3f46;
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.8), inset 0 0 40px rgba(255, 255, 255, 0.05);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-family: 'Inter', system-ui, -apple-system, sans-serif;
+}
+
+/* --------------------------------------------------------------------------
+   EFEITO DE FUMAÇA BRANCA LUMINOSA (BACKGROUND)
+   -------------------------------------------------------------------------- */
+.fumaca-wrapper-arte {
+    position: absolute;
+    inset: 0;
+    pointer-events: none;
+    z-index: 1;
+    overflow: hidden;
+}
+
+.brilho-luz-centro {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 380px;
+    height: 380px;
+    background: radial-gradient(circle, rgba(255, 255, 255, 0.15) 0%, transparent 70%);
+    filter: blur(40px);
+    border-radius: 50%;
+}
+
+.camada-fumaca-arte {
+    position: absolute;
+    width: 200%;
+    height: 200%;
+    top: -50%;
+    left: -50%;
+    background-image: 
+        radial-gradient(circle, rgba(255, 255, 255, 0.25) 0%, rgba(255, 255, 255, 0.05) 40%, transparent 70%);
+    filter: blur(30px);
+}
+
+.fumaca-1 { animation: girofumaca 22s infinite linear; opacity: 0.7; }
+.fumaca-2 { animation: girofumaca 32s infinite linear reverse; opacity: 0.4; }
+
+@keyframes girofumaca {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
+
+/* ==========================================================================
+   ARTE INTERATIVA DE ENCERRAMENTO (SEM FUNDO | ALTURA 400PX)
+   ========================================================================== */
+
+.sec-arte-final {
+    width: 100%;
+    height: 400px;
+    max-height: 400px;
+    margin: 20px auto;
+    padding: 10px;
+    box-sizing: border-box;
+    
+    /* Fundo Totalmente Transparente (Sem Cor / Sem Borda Externa) */
+    background: transparent !important;
+    border: none !important;
+    box-shadow: none !important;
+    
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    overflow: hidden;
+    font-family: 'Inter', system-ui, -apple-system, sans-serif;
+}
+
+/* --------------------------------------------------------------------------
+   EFEITO DE FUMAÇA BRANCA LUMINOSA SUTIL
+   -------------------------------------------------------------------------- */
+.fumaca-wrapper-arte {
+    position: absolute;
+    inset: 0;
+    pointer-events: none;
+    z-index: 1;
+    overflow: hidden;
+}
+
+.brilho-luz-centro {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 300px;
+    height: 300px;
+    background: radial-gradient(circle, rgba(255, 255, 255, 0.12) 0%, transparent 70%);
+    filter: blur(30px);
+    border-radius: 50%;
+}
+
+.camada-fumaca-arte {
+    position: absolute;
+    width: 180%;
+    height: 180%;
+    top: -40%;
+    left: -40%;
+    background-image: 
+        radial-gradient(circle, rgba(255, 255, 255, 0.18) 0%, rgba(255, 255, 255, 0.03) 40%, transparent 70%);
+    filter: blur(25px);
+}
+
+.fumaca-1 { animation: girofumaca 22s infinite linear; opacity: 0.6; }
+.fumaca-2 { animation: girofumaca 32s infinite linear reverse; opacity: 0.3; }
+
+@keyframes girofumaca {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
+
+/* ==========================================================================
+   ESTILO FINAL: BANNER ESTILO UNIFORME (DOURADO, PRETO E BRANCO)
+   ========================================================================== */
+
+.sec-final-camisa {
+    width: 100%;
+    max-height: 400px;
+    height: 380px;
+    margin: 40px auto 0 auto;
+    padding: 30px 20px;
+    box-sizing: border-box;
+    
+    /* Base em Preto com Gradiente Sutil */
+    background: radial-gradient(circle at center, #18181b 0%, #09090b 100%);
+    position: relative;
+    overflow: hidden;
+    
+    /* Linhas de Costura Superior/Inferior em Dourado Sutil */
+    border-top: 2px dashed rgba(212, 175, 55, 0.4);
+    border-bottom: 2px dashed rgba(212, 175, 55, 0.4);
+    
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-family: 'Inter', system-ui, -apple-system, sans-serif;
+}
+
+/* --------------------------------------------------------------------------
+   TEXTURA DE TECIDO E LISTRAS DE FARDAMENTO
+   -------------------------------------------------------------------------- */
+.textura-tecido-overlay {
+    position: absolute;
+    inset: 0;
+    pointer-events: none;
+    z-index: 1;
+    opacity: 0.15;
+    background-image: radial-gradient(rgba(255, 255, 255, 0.8) 1px, transparent 0);
+    background-size: 4px 4px;
+}
+
+.listras-fardamento {
+    position: absolute;
+    inset: 0;
+    pointer-events: none;
+    z-index: 1;
+    opacity: 0.04;
+    background: repeating-linear-gradient(
+        90deg,
+        #d4af37,
+        #d4af37 40px,
+        transparent 40px,
+        transparent 80px
+    );
+}
+
+/* --------------------------------------------------------------------------
+   CONTAINER DO CONTEÚDO
+   -------------------------------------------------------------------------- */
+.conteudo-camisa-container {
+    position: relative;
+    z-index: 2;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    max-width: 800px;
+    width: 100%;
+}
+
+/* ETIQUETA SUPERIOR */
+.etiqueta-gola {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    margin-bottom: 15px;
+}
+
+.linha-costura-ouro {
+    width: 35px;
+    height: 1px;
+    background: linear-gradient(90deg, transparent, #d4af37, transparent);
+}
+
+.texto-etiqueta {
+    font-size: 0.68rem;
+    font-weight: 800;
+    color: #fef08a; /* Dourado claro */
+    letter-spacing: 2.5px;
+    text-transform: uppercase;
+}
+
+/* --------------------------------------------------------------------------
+   ESCUDO COM AURA DOURADA E RELEVO
+   -------------------------------------------------------------------------- */
+.escudo-camisa-wrapper {
+    position: relative;
+    width: 140px;
+    height: 140px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 15px;
+}
+
+.aura-tecido-ouro {
+    position: absolute;
+    width: 170px;
+    height: 170px;
+    background: radial-gradient(circle, rgba(212, 175, 55, 0.25) 0%, transparent 70%);
+    border-radius: 50%;
+    filter: blur(18px);
+}
+
+.escudo-patch {
+    position: relative;
+    z-index: 2;
+    max-width: 100%;
+    max-height: 100%;
+    object-fit: contain;
+    filter: drop-shadow(0 10px 15px rgba(0, 0, 0, 0.9)) contrast(1.05);
+    transition: transform 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275), filter 0.4s ease;
+    cursor: pointer;
+}
+
+.escudo-camisa-wrapper:hover .escudo-patch {
+    transform: scale(1.08) translateY(-4px);
+    filter: drop-shadow(0 15px 25px rgba(212, 175, 55, 0.3)) contrast(1.1);
+}
+
+/* --------------------------------------------------------------------------
+   TIPOGRAFIA BORDADA (DOURADO, PRETO E BRANCO)
+   -------------------------------------------------------------------------- */
+.marca-sogronis {
+    font-size: 2.4rem;
+    font-weight: 900;
+    color: #ffffff;
+    margin: 0;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    text-shadow: 0 2px 0 #000000, 0 4px 10px rgba(0, 0, 0, 0.8);
+}
+
+.slogan-camisa {
+    font-size: 0.82rem;
+    font-weight: 800;
+    color: #d4af37; /* Dourado metálico */
+    margin: 6px 0 0 0;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+}
+
+/* --------------------------------------------------------------------------
+   SELO DE AUTENTICIDADE EM DOURADO
+   -------------------------------------------------------------------------- */
+.selo-autenticidade {
+    position: absolute;
+    bottom: -10px;
+    right: 0;
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    background: rgba(212, 175, 55, 0.08);
+    border: 1px solid rgba(212, 175, 55, 0.3);
+    padding: 4px 12px;
+    border-radius: 6px;
+    color: #fef08a;
+    font-size: 0.65rem;
+    font-weight: 800;
+    letter-spacing: 1px;
+}
+
+.selo-autenticidade i {
+    color: #d4af37;
+}
+
+/* --------------------------------------------------------------------------
+   RESPONSIVIDADE (MOBILE)
+   -------------------------------------------------------------------------- */
+@media (max-width: 600px) {
+    .sec-final-camisa {
+        height: 340px;
+        padding: 20px 15px;
+    }
+
+    .escudo-camisa-wrapper {
+        width: 110px;
+        height: 110px;
+    }
+
+    .marca-sogronis {
+        font-size: 1.8rem;
+    }
+
+    .slogan-camisa {
+        font-size: 0.72rem;
+    }
+
+    .selo-autenticidade {
+        position: static;
+        margin-top: 15px;
+    }
+}
+
+
+/* ==========================================================================
+   CONCEITO 1: ESTÁDIO & ARQUIBANCADA METÁLICA (SOGRONI'S F.S.A)
+   ========================================================================== */
+
+.footer-estadio {
+    width: 100%;
+    /* Fundo Metálico Escuro com Efeito de Textura Industrial */
+    background: radial-gradient(circle at 50% 0%, #1e1e24 0%, #0b0b0d 70%, #000000 100%);
+    color: #ffffff;
+    font-family: 'Inter', system-ui, -apple-system, sans-serif;
+    position: relative;
+    padding-top: 60px;
+    margin-top: 80px;
+    border-top: 1px solid #2d2d35;
+    box-shadow: 0 -10px 30px rgba(0, 0, 0, 0.8);
+}
+
+/* LINHA SUPERIOR DE LUZ NEON DOURADA */
+.estadio-luz-topo {
+    position: absolute;
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 80%;
+    height: 2px;
+    background: linear-gradient(90deg, transparent, #d4af37, #fef08a, #d4af37, transparent);
+    box-shadow: 0 0 15px #d4af37, 0 0 30px #d4af37;
+}
+
+/* ESCUDO GIGANTE CENTRALIZADO E ELEVADO */
+.estadio-escudo-wrapper {
+    position: absolute;
+    top: -50px;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 10;
+}
+
+.escudo-brilho-bg {
+    position: absolute;
+    width: 90px;
+    height: 90px;
+    background: #d4af37;
+    filter: blur(25px);
+    opacity: 0.4;
+    border-radius: 50%;
+    top: 5px;
+    left: -5px;
+}
+
+.escudo-central-gigante {
+    width: 85px;
+    height: 85px;
+    object-fit: contain;
+    background: #09090b;
+    border: 3px solid #d4af37;
+    border-radius: 50%;
+    padding: 8px;
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.9), 0 0 15px rgba(212, 175, 55, 0.3);
+    transition: transform 0.4s ease;
+}
+
+.escudo-central-gigante:hover {
+    transform: scale(1.1) rotate(5deg);
+}
+
+/* CONTAINER PRINCIPAL */
+.estadio-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px 25px 40px 25px;
+    display: grid;
+    grid-template-columns: 1.8fr 1fr 1.2fr;
+    gap: 40px;
+    box-sizing: border-box;
+}
+
+/* --------------------------------------------------------------------------
+   PLACA METÁLICA DE LOCALIZAÇÃO (JARDIM RINCÃO / ZN)
+   -------------------------------------------------------------------------- */
+.placa-rua-metalica {
+    display: inline-flex;
+    align-items: center;
+    background: linear-gradient(135deg, #18181b 0%, #09090b 100%);
+    border: 1.5px solid #d4af37;
+    border-radius: 8px;
+    overflow: hidden;
+    margin-bottom: 18px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.6);
+}
+
+.placa-icone {
+    background: #d4af37;
+    color: #000000;
+    padding: 12px 16px;
+    font-size: 1.2rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.placa-info {
+    padding: 8px 16px;
+    display: flex;
+    flex-direction: column;
+}
+
+.placa-bairro {
+    font-size: 1rem;
+    font-weight: 900;
+    color: #ffffff;
+    letter-spacing: 1.5px;
+}
+
+.placa-zona {
+    font-size: 0.68rem;
+    font-weight: 800;
+    color: #d4af37;
+    letter-spacing: 1px;
+}
+
+.estadio-slogan {
+    font-size: 0.85rem;
+    color: #a1a1aa;
+    line-height: 1.6;
+    margin: 0;
+}
+
+/* --------------------------------------------------------------------------
+   NAVEGAÇÃO ESTILO PLACAR ELETRÔNICO
+   -------------------------------------------------------------------------- */
+.estadio-titulo-secao {
+    font-size: 0.88rem;
+    font-weight: 900;
+    color: #d4af37;
+    letter-spacing: 2px;
+    margin: 0 0 20px 0;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.estadio-nav {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.estadio-nav a {
+    color: #d4d4d8;
+    text-decoration: none;
+    font-size: 0.85rem;
+    font-weight: 600;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    transition: all 0.3s ease;
+}
+
+.estadio-nav a i {
+    font-size: 0.75rem;
+    color: #d4af37;
+    transition: transform 0.3s ease;
+}
+
+.estadio-nav a:hover {
+    color: #ffffff;
+    transform: translateX(6px);
+}
+
+.estadio-nav a:hover i {
+    transform: translateX(3px);
+}
+
+/* --------------------------------------------------------------------------
+   REDES SOCIAIS & BOTÕES METÁLICOS
+   -------------------------------------------------------------------------- */
+.estadio-redes-txt {
+    font-size: 0.82rem;
+    color: #a1a1aa;
+    margin: 0 0 15px 0;
+}
+
+.estadio-botoes-redes {
+    display: flex;
+    gap: 12px;
+}
+
+.btn-estadio-rede {
+    width: 44px;
+    height: 44px;
+    background: #18181b;
+    border: 1px solid #3f3f46;
+    border-radius: 8px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #ffffff;
+    font-size: 1.1rem;
+    text-decoration: none;
+    transition: all 0.3s ease;
+    box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.1);
+}
+
+.btn-estadio-rede:hover {
+    background: #d4af37;
+    color: #000000;
+    border-color: #fef08a;
+    transform: translateY(-4px);
+    box-shadow: 0 6px 18px rgba(212, 175, 55, 0.4);
+}
+
+.btn-estadio-wa:hover {
+    background: #22c55e;
+    color: #ffffff;
+    border-color: #4ade80;
+    box-shadow: 0 6px 18px rgba(34, 197, 94, 0.4);
+}
+
+/* --------------------------------------------------------------------------
+   BARRA INFERIOR / ASSINATURA TECH DO DESENVOLVEDOR @RSTEC
+   -------------------------------------------------------------------------- */
+.estadio-rodape-inferior {
+    background: #050507;
+    border-top: 1px solid #18181b;
+    padding: 20px 25px;
+}
+
+.inferior-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 15px;
+}
+
+.copy-estadio {
+    font-size: 0.8rem;
+    color: #71717a;
+    margin: 0;
+}
+
+.copy-estadio strong {
+    color: #d4d4d8;
+}
+
+/* CRÉDITO ESPECIAL @RSTEC (STYLE CYBER/TECH) */
+.assinatura-rstec-wrapper {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.txt-dev {
+    font-size: 0.78rem;
+    color: #a1a1aa;
+}
+
+.tag-tech-rstec {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    background: #09090b;
+    border: 1px solid #d4af37;
+    padding: 6px 14px;
+    border-radius: 6px;
+    color: #ffffff;
+    font-size: 0.82rem;
+    text-decoration: none;
+    transition: all 0.3s ease;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.8);
+}
+
+.tech-dot {
+    width: 6px;
+    height: 6px;
+    background: #22c55e;
+    border-radius: 50%;
+    box-shadow: 0 0 8px #22c55e;
+}
+
+.tag-tech-rstec i {
+    color: #d4af37;
+    font-size: 0.78rem;
+}
+
+.tag-tech-rstec strong {
+    color: #fef08a;
+    letter-spacing: 1px;
+}
+
+.tag-tech-rstec:hover {
+    background: #d4af37;
+    color: #000000;
+    border-color: #ffffff;
+    box-shadow: 0 0 15px rgba(212, 175, 55, 0.5);
+    transform: translateY(-2px);
+}
+
+.tag-tech-rstec:hover i,
+.tag-tech-rstec:hover strong {
+    color: #000000;
+}
+
+/* RESPONSIVIDADE */
+/* ==========================================================================
+   MENU HAMBÚRGUER & RESPONSIVIDADE COMPLETA
+   ========================================================================== */
+
+/* Botão Hambúrguer (Escondido em Desktop) */
+.mobile-toggle {
+    display: none;
+    background: transparent;
+    border: none;
+    color: var(--gold-primary);
+    font-size: 1.5rem;
+    cursor: pointer;
+    padding: 5px;
+}
+
+.mobile-only-actions {
+    display: none;
+}
+
+/* Ajustes na imagem dentro do logo badge */
+.logo-badge .logo-img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    border-radius: 50%;
+}
+
+/* --- REGRAS PARA TABLETS E DISPOSITIVOS MÓVEIS (<= 992px) --- */
+@media (max-width: 992px) {
+    /* Exibir botão menu hambúrguer */
+    .mobile-toggle {
+        display: block;
+    }
+
+    /* Ocultar botões sociais e de contato do header padrão */
+    .nav-actions {
+        display: none;
+    }
+
+    /* Menu Gaveta (Dropdown Lateral/Overlay) */
+    .nav-links {
+        position: fixed;
+        top: 0;
+        right: -100%;
+        width: 280px;
+        height: 100vh;
+        background-color: var(--black-primary);
+        flex-direction: column;
+        align-items: flex-start;
+        justify-content: flex-start;
+        padding: 80px 24px 30px 24px;
+        gap: 20px;
+        box-shadow: -5px 0 20px rgba(0, 0, 0, 0.5);
+        transition: right 0.4s ease;
+        z-index: 999;
+    }
+
+    /* Classe ativada via JavaScript */
+    .nav-links.nav-open {
+        right: 0;
+    }
+
+    .nav-links a {
+        color: #ffffff;
+        font-size: 1.1rem;
+        width: 100%;
+        display: block;
+    }
+
+    .mobile-only-actions {
+        display: flex;
+        flex-direction: column;
+        gap: 16px;
+        width: 100%;
+        margin-top: 20px;
+        padding-top: 20px;
+        border-top: 1px solid rgba(255, 255, 255, 0.1);
+    }
+
+    .mobile-only-actions .social-icons {
+        justify-content: flex-start;
+    }
+
+    .mobile-only-actions .btn-gold-action {
+        justify-content: center;
+        width: 100%;
+    }
+
+    /* Ajuste da Barra de Patrocinadores */
+    .top-sponsor-bar {
+        padding: 6px 12px;
+    }
+
+    .sponsor-label {
+        font-size: 0.65rem;
+        padding-right: 10px;
+    }
+
+    /* Ajuste da Section Próximo Jogo */
+    .prox-jogo {
+        height: auto;
+        padding: 12px;
+    }
+
+    .prox-jogo h2 {
+        font-size: 0.95rem;
+        flex-wrap: wrap;
+    }
+
+    /* Ajuste do Banner Destaque */
+    .sec-destaque {
+        margin-bottom: 40px;
+    }
+
+    .destaque {
+        width: 95%;
+        height: 320px;
+    }
+
+    .banner-content {
+        left: 20px;
+        right: 20px;
+        bottom: 25px;
+    }
+
+    .banner-content h1 {
+        font-size: 1.3rem;
+    }
+
+    .banner-content p {
+        font-size: 0.85rem;
+    }
+
+    /* Nomes dos times nos cards de resultados */
+    .nomeTime {
+        gap: 20px;
+        justify-content: space-between;
+        margin-left: 0;
+    }
+}
+
+/* --- REGRAS PARA CELULARES PEQUENOS (<= 600px) --- */
+@media (max-width: 600px) {
+    .destaque {
+        height: 260px;
+    }
+
+    .badge-destaque {
+        font-size: 0.65rem;
+        padding: 3px 8px;
+    }
+
+    .banner-content h1 {
+        font-size: 1.05rem;
+    }
+
+    .banner-content p {
+        display: none; /* Oculta descrição longa no mobile para não poluir o banner */
+    }
+
+    .sec-header-resultado h2,
+    .sec-header-elenco h2,
+    .header-titulo h2,
+    .sec-header-galeria h2 {
+        font-size: 1.3rem;
+    }
+
+    .sec-final-camisa {
+        height: auto;
+        padding: 40px 15px;
+    }
+
+    .marca-sogronis {
+        font-size: 1.6rem;
+    }
+}
