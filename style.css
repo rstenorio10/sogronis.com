@@ -292,6 +292,21 @@ body {
 }
 /* Section principal onde veremos os destaques da semana, proximos jogos e informações relevantes ao time*/
 
+main{
+    margin-top: 30px;
+}
+
+.sec-principal{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 86vh;
+    gap: 30px;
+    margin-top: 50px;
+    
+}
 
 
 /* ==========================================================================
@@ -307,6 +322,7 @@ body {
     height: 100px;
     margin: 10px auto;
     padding: 10px 20px;
+   
     
     /* Fundo Claro com Borda Bege Ouro */
     background-color: #ffffff;
@@ -353,7 +369,7 @@ body {
     border-radius: 50%;
     border: 1px solid #D4AF37; /* Borda Dourada */
     background-color: #f8f9fa;
-    
+    padding: 2px;
 }
 
 /* Destaque para o "X" central */
@@ -392,7 +408,7 @@ body {
     justify-content: center;
     width: 100%;
     margin-top: 0px;   /* Margem superior reduzida para aproximar da div de cima */
-    margin-bottom: 100px;
+    margin-bottom: 20px;
     padding: 0;
     box-sizing: border-box;
 }
@@ -557,9 +573,7 @@ body {
     align-items: center;
     width: 94%;
     max-width: 1400px;
-    margin: auto;
-    margin-top: 50px;
-    margin-bottom: 50px;
+    margin: 30px auto;
     padding: 0;
     box-sizing: border-box;
 }
@@ -754,7 +768,6 @@ body {
     width: 100%; /* Largura total para alinhar com o container pai */
     max-width: 1200px;
     margin: 40px auto;
-    margin-bottom: 100px;
     padding: 0 20px; /* Padding padrão de alinhamento lateral */
     box-sizing: border-box;
 }
@@ -1051,7 +1064,6 @@ body {
     width: 100%;
     max-width: 1400px;
     margin: 40px auto;
-    margin-bottom: 50px;
     padding: 0 20px;
     box-sizing: border-box;
     font-family: 'Inter', system-ui, -apple-system, sans-serif;
@@ -1136,7 +1148,6 @@ body {
     border-radius: 16px;
     box-sizing: border-box;
     box-shadow: 0 15px 35px rgba(0, 0, 0, 0.35);
-    margin-top: 60px;
 }
 
 /* Gramado Plano 2D Horizontal (Proporção 16:9) */
@@ -1344,7 +1355,6 @@ body {
 .sec-header-galeria {
     text-align: center;
     margin-bottom: 35px;
-    margin-top: 60px;
 }
 
 .sec-header-galeria .badge-tag {
@@ -1367,8 +1377,7 @@ body {
 .cards-galeria {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
-    gap: 58px;
-    margin-bottom: 100px;
+    gap: 18px;
 }
 
 .card-foto {
@@ -2479,156 +2488,744 @@ body {
 }
 
 /* RESPONSIVIDADE */
-/* ==========================================================================
-   MENU HAMBÚRGUER & RESPONSIVIDADE COMPLETA
-   ========================================================================== */
-
-/* Botão Hambúrguer (Escondido em Desktop) */
-.mobile-toggle {
-    display: none;
-    background: transparent;
-    border: none;
-    color: var(--gold-primary);
-    font-size: 1.5rem;
-    cursor: pointer;
-    padding: 5px;
-}
-
-.mobile-only-actions {
-    display: none;
-}
-
-/* Ajustes na imagem dentro do logo badge */
-.logo-badge .logo-img {
-    width: 100%;
-    height: 100%;
-    object-fit: contain;
-    border-radius: 50%;
-}
-
-/* --- REGRAS PARA TABLETS E DISPOSITIVOS MÓVEIS (<= 992px) --- */
-@media (max-width: 992px) {
-    /* Exibir botão menu hambúrguer */
-    .mobile-toggle {
-        display: block;
+@media (max-width: 900px) {
+    .estadio-container {
+        grid-template-columns: 1fr;
+        gap: 30px;
+        text-align: center;
     }
 
-    /* Ocultar botões sociais e de contato do header padrão */
+    .placa-rua-metalica {
+        margin: 0 auto 15px auto;
+    }
+
+    .estadio-titulo-secao {
+        justify-content: center;
+    }
+
+    .estadio-nav a {
+        justify-content: center;
+    }
+
+    .estadio-botoes-redes {
+        justify-content: center;
+    }
+
+    .inferior-container {
+        flex-direction: column;
+        justify-content: center;
+        text-align: center;
+    }
+}
+
+
+/* ==========================================================================\n   RESPONSIVIDADE FINAL — CELULARES, TABLETS E DESKTOP\n   Este bloco sobrescreve regras antigas para impedir cortes, overflow e\n   espaços laterais desnecessários em telas menores.\n   ========================================================================== */
+
+html {
+    width: 100%;
+    max-width: 100%;
+    overflow-x: hidden;
+    scroll-padding-top: var(--header-offset, 110px);
+}
+
+body {
+    width: 100%;
+    max-width: 100%;
+    min-width: 0;
+    overflow-x: hidden;
+    margin: 0;
+}
+
+body,
+main,
+section,
+header,
+footer,
+div,
+ul,
+li,
+nav {
+    min-width: 0;
+}
+
+img,
+svg,
+video,
+canvas {
+    max-width: 100%;
+}
+
+/* Seções: ocupam a tela sem criar faixa lateral */
+main {
+    width: 100%;
+    max-width: 100%;
+    overflow: hidden;
+}
+
+.sec-principal,
+.sec-destaque,
+.sec-resultados,
+.sec-elenco,
+.sec-formacao,
+.sec-galeria,
+.sec-final-camisa {
+    width: 100%;
+    max-width: 100%;
+    box-sizing: border-box;
+}
+
+/* Âncoras sempre chegam abaixo do header sticky */
+[id] {
+    scroll-margin-top: var(--header-offset, 110px);
+}
+
+/* HEADER */
+.nav-container {
+    width: 100%;
+    max-width: 1280px;
+    padding-left: clamp(12px, 2vw, 24px);
+    padding-right: clamp(12px, 2vw, 24px);
+    box-sizing: border-box;
+}
+
+.mobile-toggle {
+    display: none;
+    border: 1px solid var(--beige-accent);
+    background: var(--black-primary);
+    color: var(--gold-primary);
+    width: 42px;
+    height: 42px;
+    border-radius: 9px;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    flex: 0 0 auto;
+}
+
+/* Próximo jogo */
+.sec-principal {
+    padding: 0 clamp(10px, 2vw, 24px);
+}
+
+.prox-jogo {
+    width: min(100%, 900px);
+    max-width: 100%;
+    height: auto;
+    min-height: 100px;
+    margin: 12px auto;
+}
+
+/* Banner */
+.sec-destaque {
+    margin-bottom: clamp(50px, 8vw, 100px);
+    padding: 0;
+}
+
+.destaque {
+    width: 100%;
+    max-width: 1400px;
+    height: clamp(280px, 42vw, 400px);
+    margin: 0 auto;
+}
+
+/* Resultados */
+.sec-resultados {
+    margin: clamp(30px, 5vw, 60px) auto;
+    padding: 0 clamp(10px, 2vw, 24px);
+}
+
+.sec-header-resultado {
+    flex-wrap: wrap;
+    gap: 12px;
+}
+
+.resultados {
+    width: 100%;
+    max-width: 100%;
+    overscroll-behavior-x: contain;
+}
+
+.nomeTime {
+    gap: clamp(20px, 7vw, 95px);
+    margin-left: 0;
+    justify-content: center;
+    width: 100%;
+}
+
+/* Elenco */
+.sec-elenco {
+    max-width: 1400px;
+    margin: clamp(35px, 5vw, 60px) auto;
+    padding: 0 clamp(10px, 2vw, 24px);
+}
+
+.sec-header-elenco {
+    flex-wrap: wrap;
+    gap: 12px;
+}
+
+.elenco-viewport {
+    width: 100%;
+    max-width: 100%;
+    overflow: hidden;
+}
+
+/* Formação */
+.sec-formacao {
+    max-width: 1400px;
+    margin: clamp(35px, 5vw, 60px) auto;
+    padding: 0 clamp(10px, 2vw, 24px);
+}
+
+.campo-container-2d {
+    width: min(100%, 900px);
+    max-width: 100%;
+    padding: clamp(7px, 1.5vw, 12px);
+}
+
+.campo-gramado-2d {
+    width: 100%;
+    height: auto;
+    aspect-ratio: 16 / 9;
+    min-height: 190px;
+}
+
+/* Galeria */
+.sec-galeria {
+    max-width: 1400px;
+    margin: clamp(35px, 5vw, 60px) auto;
+    padding: 0 clamp(10px, 2vw, 24px);
+}
+
+.cards-galeria,
+.galeria {
+    width: 100%;
+    max-width: 100%;
+}
+
+/* Banner final */
+.sec-final-camisa {
+    margin-left: 0;
+    margin-right: 0;
+    overflow: hidden;
+}
+
+.conteudo-camisa-container {
+    width: min(100%, 1000px);
+    max-width: 100%;
+    padding-left: clamp(12px, 4vw, 30px);
+    padding-right: clamp(12px, 4vw, 30px);
+    box-sizing: border-box;
+}
+
+/* Rodapé */
+.footer-estadio {
+    width: 100%;
+    max-width: 100%;
+    overflow: hidden;
+}
+
+.estadio-container,
+.inferior-container {
+    width: 100%;
+    max-width: 1200px;
+    box-sizing: border-box;
+}
+
+/* TABLET */
+@media (max-width: 1024px) {
+    .nav-links {
+        gap: 16px;
+    }
+
     .nav-actions {
+        gap: 8px;
+    }
+
+    .nav-actions .social-icons {
         display: none;
     }
 
-    /* Menu Gaveta (Dropdown Lateral/Overlay) */
-    .nav-links {
-        position: fixed;
-        top: 0;
-        right: -100%;
-        width: 280px;
-        height: 100vh;
-        background-color: var(--black-primary);
-        flex-direction: column;
-        align-items: flex-start;
-        justify-content: flex-start;
-        padding: 80px 24px 30px 24px;
-        gap: 20px;
-        box-shadow: -5px 0 20px rgba(0, 0, 0, 0.5);
-        transition: right 0.4s ease;
-        z-index: 999;
-    }
-
-    /* Classe ativada via JavaScript */
-    .nav-links.nav-open {
-        right: 0;
-    }
-
-    .nav-links a {
-        color: #ffffff;
-        font-size: 1.1rem;
-        width: 100%;
-        display: block;
-    }
-
-    .mobile-only-actions {
-        display: flex;
-        flex-direction: column;
-        gap: 16px;
-        width: 100%;
-        margin-top: 20px;
-        padding-top: 20px;
-        border-top: 1px solid rgba(255, 255, 255, 0.1);
-    }
-
-    .mobile-only-actions .social-icons {
-        justify-content: flex-start;
-    }
-
-    .mobile-only-actions .btn-gold-action {
-        justify-content: center;
-        width: 100%;
-    }
-
-    /* Ajuste da Barra de Patrocinadores */
-    .top-sponsor-bar {
-        padding: 6px 12px;
-    }
-
-    .sponsor-label {
-        font-size: 0.65rem;
-        padding-right: 10px;
-    }
-
-    /* Ajuste da Section Próximo Jogo */
-    .prox-jogo {
-        height: auto;
-        padding: 12px;
-    }
-
-    .prox-jogo h2 {
-        font-size: 0.95rem;
-        flex-wrap: wrap;
-    }
-
-    /* Ajuste do Banner Destaque */
-    .sec-destaque {
-        margin-bottom: 40px;
+    .brand-name {
+        font-size: 1.15rem;
     }
 
     .destaque {
-        width: 95%;
-        height: 320px;
+        height: 360px;
     }
 
     .banner-content {
-        left: 20px;
-        right: 20px;
-        bottom: 25px;
+        left: 28px;
+        right: 28px;
+        bottom: 30px;
+        max-width: 80%;
     }
 
     .banner-content h1 {
-        font-size: 1.3rem;
+        font-size: clamp(1.5rem, 3vw, 2rem);
     }
 
-    .banner-content p {
-        font-size: 0.85rem;
-    }
-
-    /* Nomes dos times nos cards de resultados */
-    .nomeTime {
-        gap: 20px;
-        justify-content: space-between;
-        margin-left: 0;
+    .campo-container-2d {
+        width: min(80%, 900px);
     }
 }
 
-/* --- REGRAS PARA CELULARES PEQUENOS (<= 600px) --- */
-@media (max-width: 600px) {
+/* CELULAR */
+@media (max-width: 768px) {
+    :root {
+        --mobile-padding: 10px;
+    }
+
+    html {
+        scroll-padding-top: 118px;
+    }
+
+    /* Header mobile */
+    .top-sponsor-bar {
+        padding: 6px 10px;
+        min-height: 30px;
+    }
+
+    .sponsor-label {
+        padding-right: 10px;
+        font-size: 0.58rem;
+    }
+
+    .nav-container {
+        min-height: 62px;
+        padding: 9px 10px;
+        gap: 8px;
+    }
+
+    .logo-link {
+        gap: 8px;
+        min-width: 0;
+    }
+
+    .logo-badge,
+    .logo-badge img {
+        width: 38px;
+        height: 38px;
+    }
+
+    .brand-name {
+        font-size: 0.95rem;
+        letter-spacing: .5px;
+        white-space: nowrap;
+    }
+
+    .mobile-toggle {
+        display: flex;
+        margin-left: auto;
+    }
+
+    .nav-links {
+        display: none;
+        position: absolute;
+        top: 100%;
+        left: 0;
+        right: 0;
+        width: 100%;
+        background: rgba(248, 249, 250, 0.98);
+        box-shadow: 0 12px 25px rgba(0,0,0,.12);
+        border-top: 1px solid var(--beige-accent);
+        flex-direction: column;
+        align-items: stretch;
+        gap: 0;
+        padding: 6px 10px 12px;
+        z-index: 1001;
+    }
+
+    .nav-links.nav-open {
+        display: flex;
+    }
+
+    .nav-links li {
+        width: 100%;
+    }
+
+    .nav-links a {
+        display: flex;
+        width: 100%;
+        min-height: 44px;
+        align-items: center;
+        padding: 10px 8px;
+        border-bottom: 1px solid rgba(232,220,196,.6);
+    }
+
+    .nav-actions {
+        display: flex;
+        margin-left: 0;
+    }
+
+    .nav-actions .social-icons {
+        display: none;
+    }
+
+    .btn-gold-action {
+        width: 42px;
+        height: 42px;
+        padding: 0;
+        justify-content: center;
+        border-radius: 9px;
+        font-size: 0;
+    }
+
+    .btn-gold-action i {
+        font-size: 1.05rem;
+    }
+
+    /* Jogo */
+    .sec-principal {
+        padding: 0;
+    }
+
+    .prox-jogo {
+        width: calc(100% - 20px);
+        margin: 10px auto;
+        padding: 10px 8px;
+        min-height: 94px;
+    }
+
+    .prox-jogo h2 {
+        width: 100%;
+        flex-wrap: wrap;
+        gap: 6px;
+        font-size: clamp(.78rem, 3.2vw, 1rem);
+    }
+
+    .prox-jogo .escudo-time,
+    .prox-jogo .escudo-time-2 {
+        width: 27px;
+        height: 27px;
+    }
+
+    .prox-jogo .vs-text {
+        padding: 2px 6px;
+        margin: 0 1px;
+    }
+
+    .prox-jogo p {
+        font-size: .7rem;
+        text-align: center;
+        justify-content: center;
+        flex-wrap: wrap;
+    }
+
+    /* Banner ocupa toda a largura */
+    .sec-destaque {
+        width: 100%;
+        margin-bottom: 55px;
+    }
+
     .destaque {
-        height: 260px;
+        width: 100%;
+        height: clamp(300px, 72vw, 390px);
+        border-radius: 0;
+        border-left: 0;
+        border-right: 0;
+    }
+
+    .banner-content {
+        left: 16px;
+        right: 16px;
+        bottom: 24px;
+        max-width: none;
     }
 
     .badge-destaque {
-        font-size: 0.65rem;
-        padding: 3px 8px;
+        font-size: .62rem;
+        padding: 4px 8px;
+        margin-bottom: 8px;
+    }
+
+    .banner-content h1 {
+        font-size: clamp(1.15rem, 5.4vw, 1.55rem);
+        line-height: 1.12;
+        overflow-wrap: anywhere;
+    }
+
+    .banner-content p {
+        font-size: .76rem;
+        line-height: 1.35;
+    }
+
+    /* Resultados */
+    .sec-resultados,
+    .sec-elenco,
+    .sec-formacao,
+    .sec-galeria {
+        width: 100%;
+        padding-left: 10px;
+        padding-right: 10px;
+    }
+
+    .sec-header-resultado,
+    .sec-header-elenco,
+    .sec-header-formacao,
+    .sec-header-galeria {
+        width: 100%;
+    }
+
+    .sec-header-resultado h2,
+    .sec-header-elenco h2,
+    .sec-header-galeria h2,
+    .header-titulo h2 {
+        font-size: 1.25rem;
+    }
+
+    .sec-header-resultado > div {
+        width: 100%;
+        justify-content: space-between;
+    }
+
+    .btn-proximos {
+        flex: 1;
+        justify-content: center;
+        padding: 8px 7px;
+        font-size: .72rem;
+    }
+
+    .resultados {
+        gap: 12px;
+        padding-left: 0;
+        padding-right: 0;
+        scroll-snap-type: x mandatory;
+    }
+
+    .card {
+        flex: 0 0 100%;
+        scroll-snap-align: start;
+        max-width: 100%;
+    }
+
+    .nomeTime {
+        gap: 10px;
+        font-size: .72rem;
+    }
+
+    /* Elenco */
+    .sec-header-elenco {
+        align-items: center;
+    }
+
+    .elenco-controles {
+        gap: 6px;
+    }
+
+    .itens-card {
+        flex: 0 0 100%;
+        height: 225px;
+    }
+
+    /* Formação */
+    .sec-header-formacao {
+        align-items: stretch;
+    }
+
+    .controles-esquema {
+        width: 100%;
+        justify-content: space-between;
+        flex-wrap: wrap;
+    }
+
+    .segmented-control {
+        flex: 1;
+        min-width: 150px;
+    }
+
+    .btn-esquema {
+        flex: 1;
+        padding: 8px 10px;
+    }
+
+    .campo-container-2d {
+        width: 100%;
+        padding: 6px;
+        border-radius: 12px;
+    }
+
+    .campo-gramado-2d {
+        min-height: 0;
+        aspect-ratio: 16 / 10;
+        border-width: 2px;
+    }
+
+    .card-jogador {
+        transform: translate(-50%, -50%) scale(.72);
+        transform-origin: center;
+    }
+
+    .pino-adv {
+        transform: translate(-50%, -50%) scale(.8);
+    }
+
+    /* Galeria: uma coluna sem cortes */
+    .cards-galeria {
+        display: grid;
+        grid-template-columns: 1fr;
+        gap: 12px;
+    }
+
+    .card-foto,
+    .foto-destaque {
+        width: 100%;
+        min-width: 0;
+        height: auto;
+        min-height: 220px;
+    }
+
+    .img-galeria {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+    }
+
+    /* Modal da galeria */
+    .lightbox-modal {
+        padding: 12px;
+    }
+
+    .lightbox-conteudo {
+        width: 100%;
+        max-width: 100%;
+    }
+
+    .lightbox-img-wrapper {
+        max-width: 100%;
+    }
+
+    .lightbox-img-wrapper img {
+        max-width: 100%;
+        max-height: 72vh;
+        object-fit: contain;
+    }
+
+    .nav-btn {
+        width: 38px;
+        height: 38px;
+    }
+
+    /* Banner final */
+    .sec-final-camisa {
+        min-height: 340px;
+        height: auto;
+        padding: 35px 10px 30px;
+    }
+
+    .etiqueta-gola {
+        max-width: 100%;
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+
+    .texto-etiqueta {
+        font-size: .58rem;
+        text-align: center;
+    }
+
+    .escudo-camisa-wrapper {
+        width: 105px;
+        height: 105px;
+    }
+
+    .marca-sogronis {
+        font-size: clamp(1.35rem, 7vw, 1.8rem);
+        letter-spacing: 1.5px;
+        text-align: center;
+    }
+
+    .slogan-camisa {
+        font-size: .64rem;
+        letter-spacing: 1px;
+        text-align: center;
+    }
+
+    .selo-autenticidade {
+        position: static;
+        width: fit-content;
+        max-width: 100%;
+        margin: 14px auto 0;
+    }
+
+    /* Footer */
+    .footer-estadio {
+        margin-top: 55px;
+        padding-top: 60px;
+    }
+
+    .estadio-container {
+        width: 100%;
+        padding: 20px 14px 35px;
+        grid-template-columns: 1fr;
+        gap: 30px;
+        text-align: center;
+    }
+
+    .placa-rua-metalica {
+        max-width: 100%;
+        margin: 0 auto 15px;
+    }
+
+    .placa-info {
+        text-align: left;
+        min-width: 0;
+    }
+
+    .placa-bairro,
+    .placa-zona {
+        overflow-wrap: anywhere;
+    }
+
+    .estadio-titulo-secao,
+    .estadio-nav a,
+    .estadio-botoes-redes {
+        justify-content: center;
+    }
+
+    .estadio-rodape-inferior {
+        padding: 18px 12px;
+    }
+
+    .inferior-container {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .copy-estadio {
+        line-height: 1.5;
+    }
+
+    .assinatura-rstec-wrapper {
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+}
+
+/* CELULARES MUITO PEQUENOS */
+@media (max-width: 380px) {
+    .brand-name {
+        font-size: .82rem;
+    }
+
+    .prox-jogo .nome-time {
+        font-size: .66rem;
+    }
+
+    .prox-jogo .escudo-time,
+    .prox-jogo .escudo-time-2 {
+        width: 24px;
+        height: 24px;
+    }
+
+    .destaque {
+        height: 310px;
+    }
+
+    .banner-content {
+        left: 12px;
+        right: 12px;
+        bottom: 18px;
     }
 
     .banner-content h1 {
@@ -2636,22 +3233,97 @@ body {
     }
 
     .banner-content p {
-        display: none; /* Oculta descrição longa no mobile para não poluir o banner */
+        font-size: .68rem;
     }
 
-    .sec-header-resultado h2,
-    .sec-header-elenco h2,
-    .header-titulo h2,
-    .sec-header-galeria h2 {
-        font-size: 1.3rem;
+    .itens-card {
+        height: 215px;
+        padding: 9px;
+        gap: 9px;
     }
 
-    .sec-final-camisa {
-        height: auto;
-        padding: 40px 15px;
+    .header-atleta h3 {
+        font-size: .8rem;
     }
 
-    .marca-sogronis {
-        font-size: 1.6rem;
+    .campo-gramado-2d {
+        aspect-ratio: 16 / 11;
+    }
+
+    .card-jogador {
+        transform: translate(-50%, -50%) scale(.58);
+    }
+}
+
+/* ACESSIBILIDADE: reduz movimento quando solicitado pelo sistema */
+@media (prefers-reduced-motion: reduce) {
+    html {
+        scroll-behavior: auto;
+    }
+
+    *,
+    *::before,
+    *::after {
+        animation-duration: .01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: .01ms !important;
+    }
+}
+
+
+/* ==========================================================================
+   CORREÇÃO FINAL — ESCUDO CENTRAL DO FOOTER SOBRE O FUNDO
+   O escudo deve ficar visível e acima das imagens/texturas do rodapé.
+   ========================================================================== */
+.footer-estadio {
+    position: relative;
+    z-index: 1;
+    overflow: visible !important;
+}
+
+.footer-estadio .estadio-escudo-wrapper {
+    position: absolute;
+    top: -50px;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 100 !important;
+    isolation: isolate;
+    pointer-events: none;
+}
+
+.footer-estadio .escudo-brilho-bg {
+    position: absolute;
+    z-index: -1;
+}
+
+.footer-estadio .escudo-central-gigante {
+    position: relative;
+    z-index: 101 !important;
+    display: block;
+}
+
+.footer-estadio .estadio-luz-topo,
+.footer-estadio .estadio-container,
+.footer-estadio .estadio-rodape-inferior {
+    position: relative;
+    z-index: 2;
+}
+
+/* O escudo continua sobre o fundo, mas não interfere nos cliques do conteúdo. */
+.footer-estadio .estadio-container,
+.footer-estadio .estadio-rodape-inferior {
+    pointer-events: auto;
+}
+
+/* Em telas pequenas, preserva a projeção do escudo para fora do topo. */
+@media (max-width: 768px) {
+    .footer-estadio {
+        overflow: visible !important;
+        padding-top: 70px;
+    }
+
+    .footer-estadio .estadio-escudo-wrapper {
+        top: -50px;
+        z-index: 100 !important;
     }
 }
