@@ -16,8 +16,8 @@
 </head>
 <body>
 
-   <header class="header">
-        <!-- Barra de Patrocinadores Rotativa -->
+    <header class="header">
+        <!-- Barra de Patrocinadores Rotativa (Ticker/Marquee) -->
         <div class="top-sponsor-bar">
             <div class="sponsor-label">
                 <i class="fas fa-crown text-gold"></i> PATROCINADORES OFICIAIS
@@ -32,6 +32,7 @@
                     <span class="divider">•</span>
                     <span class="patrocinio-item"><i class="fas fa-gem"></i> Patrocínio Premium</span>
                     <span class="divider">•</span>
+                    <!-- Repetição para efeito contínuo -->
                     <span class="patrocinio-item"><i class="fas fa-bolt"></i> Patrocínio 1</span>
                     <span class="divider">•</span>
                     <span class="patrocinio-item"><i class="fas fa-shield-alt"></i> Patrocínio 2</span>
@@ -45,48 +46,37 @@
         <nav class="nav-container">
             <!-- Escudo / Logo do Time -->
             <div class="brand-logo">
-                <a href="#" class="logo-link">
+                <a href="/" class="logo-link">
+                    <!-- Substitua o 'src' pelo caminho do seu escudo -->
                     <div class="logo-badge">
-                        <img src="./img/escudo-time.png" class="logo-img" alt="Sogronis FC">
+                        <img src="./img/escudo-time.png" class="logo-badge" alt="">
                     </div>
                     <span class="brand-name">SOGRONIS <span class="gold-text">FC</span></span>
                 </a>
             </div>
 
-            <!-- Botão Hambúrguer para Telas Menores -->
-            <button class="mobile-toggle" id="mobileToggle" aria-label="Abrir menu">
+            <!-- Botão do menu mobile -->
+            <button class="mobile-toggle" id="mobileToggle" type="button" aria-label="Abrir menu" aria-expanded="false">
                 <i class="fas fa-bars"></i>
             </button>
 
-            <!-- Links do Menu -->
+            <!-- Navegação Principal com Efeito Hover Dourado -->
             <ul class="nav-links" id="navLinks">
-                <li><a href="#" class="active">Início</a></li>
+                <li><a href="#inicio" class="active">Início</a></li>
                 <li><a href="#resultados">Resultados</a></li>
                 <li><a href="#elenco">Elenco</a></li>
                 <li><a href="#formacao">Formação</a></li>
                 <li><a href="#galeria">Galeria</a></li>
-                <li class="mobile-only-actions">
-                    <div class="social-icons">
-                        <a href="https://www.instagram.com/e.c_sogronis_f_a/" target="_blank" aria-label="Instagram" class="social-btn">
-                            <i class="fab fa-instagram"></i>
-                        </a>
-                        <a href="https://facebook.com" target="_blank" aria-label="Facebook" class="social-btn">
-                            <i class="fab fa-facebook-f"></i>
-                        </a>
-                    </div>
-                    <a href="#contato" class="btn-gold-action">
-                        <i class="fab fa-whatsapp"></i> Contato
-                    </a>
-                </li>
+                
             </ul>
 
-            <!-- Redes Sociais e Botão em Desktop -->
+            <!-- Redes Sociais com Ícones e Botão Dourado/Preto -->
             <div class="nav-actions">
                 <div class="social-icons">
                     <a href="https://www.instagram.com/e.c_sogronis_f_a/" target="_blank" aria-label="Instagram" class="social-btn">
                         <i class="fab fa-instagram"></i>
                     </a>
-                    <a href="https://facebook.com" target="_blank" aria-label="Facebook" class="social-btn">
+                    <a href="https://" target="_blank" aria-label="Facebook" class="social-btn">
                         <i class="fab fa-facebook-f"></i>
                     </a>
                 </div>
@@ -98,83 +88,93 @@
         </nav>
     </header>
 
-    <main>
-        <section class="sec-principal">
-            <div class="prox-jogo">
-                <h2>
-                    <span class="nome-time">SOG FA</span> 
-                    <img src="./img/escudo-time.png" alt="Sogronis FC" class="escudo-time"> 
-                    <span class="vs-text">X</span>  
-                    <img src="./img/miliano.png" alt="Adversário" class="escudo-time-2"> 
-                    <span class="nome-time">MIL FC</span>
-                </h2>
-                <p><i class="far fa-calendar-alt"></i> Data: 27/09/2026 às 07:40hrs</p>
-            </div>
+<!-- MAIN LOCAL ONDE VAMOS FAZER NOSSAS SECTIONS PARA DAR CONTINUIDADE NA NOSSA PAGINA.-->
 
-            <div class="sec-destaque">
-                <div class="destaque">
-                    <div class="slider-track">
-                        <!-- Slide 1 -->
-                        <div class="slide">
-                            <img src="img/Enajelo-img.png" alt="Destaque 1">
-                            <div class="banner-content">
-                                <span class="badge-destaque">DESTAQUE #1</span>
-                                <h1>SOGRONIS VOLTA COM TUDO NA PREPARAÇÃO PARA <span>2027</span></h1>
-                                <p>Confira a preparação do nosso elenco principal para a próxima rodada.</p>
-                            </div>
-                        </div>
+<main>
+    <section class="sec-principal" id="inicio">
+        <div class="prox-jogo">
+            <h2>
+                <span class="nome-time">SOGRONI'S SFA</span> 
+                <img src="./img/escudo-time.png" alt="Sogronis FC" class="escudo-time"> 
+                <span class="vs-text">X</span>  
+                <img src="./img/miliano.png" alt="Adversário" class="escudo-time-2"> 
+                <span class="nome-time">MILIANOS FC</span>
+            </h2>
+            <p><i class="far fa-calendar-alt"></i> Data: 27/09/2026 às 07:40hrs</p>
+        </div>
 
-                        <!-- Slide 2 -->
-                        <div class="slide">
-                            <img src="img/fundo-banner-jogo.jfif" alt="Destaque 2">
-                            <div class="banner-content">
-                                <span class="badge-destaque">NOSSA CASA</span>
-                                <h1>ARENA PINHEIRINHO D'ÁGUA <span>SÁBADO 07:40</span></h1>
-                                <p>Garanta seu apoio e venha empurrar o time do início ao fim.</p>
-                            </div>
-                        </div>
-
-                        <!-- Slide 3 -->
-                        <div class="slide">
-                            <img src="./img/uniforme-novo1.jfif" alt="Destaque 3">
-                            <div class="banner-content">
-                                <span class="badge-destaque">NOVO UNIFORME</span>
-                                <h1>MANTO OFICIAL <span>TEMPORADA</span></h1>
-                                <p>Conheça os detalhes do novo uniforme para os jogos do time.</p>
-                            </div>
-                        </div>
-
-                        <!-- Slide 4 -->
-                        <div class="slide">
-                            <img src="https://images.unsplash.com/photo-1489944440615-453fc2b6a9a9?q=80&w=1200" alt="Destaque 4">
-                            <div class="banner-content">
-                                <span class="badge-destaque">TORCIDA</span>
-                                <h1>UNIDOS PELO SOGRONIS <span>FC</span></h1>
-                                <p>A força da nossa arquibancada faz toda a diferença dentro de campo.</p>
-                            </div>
-                        </div>
-
-                        <!-- Slide 5 -->
-                        <div class="slide">
-                            <img src="img/time-novo.png" alt="Destaque 5">
-                            <div class="banner-content">
-                                <span class="badge-destaque">BASE SOGRONIS</span>
-                                <h1>FUTURO DO CLUBE <span>Evolução da Equipe</span></h1>
-                                <p>Talentos do passado ressurgem e ganham destaque no time.</p>
-                            </div>
+        <div class="sec-destaque">
+            <div class="destaque">
+                
+                <!-- TRILHO DO SLIDER (5 IMAGENS) -->
+                <div class="slider-track">
+                    
+                    <!-- Slide 1 -->
+                    <div class="slide">
+                        <img src="img/Enajelo-img.png" alt="Destaque 1">
+                        <div class="banner-content">
+                            <span class="badge-destaque">DESTAQUE #1</span>
+                            <h1>SOGRONIS VOLTA COM TUDO NA PREPARAÇÃO PARA  <span>2027</span></h1>
+                            <p>Confira a preparação do nosso elenco principal para a próxima rodada.</p>
                         </div>
                     </div>
-                    <div class="timer-line"></div>
+
+                    <!-- Slide 2 -->
+                    <div class="slide">
+                        <img src="img/fundo-banner-jogo.jfif" alt="Destaque 2">
+                        <div class="banner-content">
+                            <span class="badge-destaque">NOSSA CASA</span>
+                            <h1>ARENA PINHEIRINHO D'ÁGUA <span>SÁBADO 07:40</span></h1>
+                            <p>Garanta seu apoio e venha empurrar o time do início ao fim.</p>
+                        </div>
+                    </div>
+
+                    <!-- Slide 3 -->
+                    <div class="slide">
+                        <img src="./img/uniforme-novo1.jfif" alt="Destaque 3">
+                        <div class="banner-content">
+                            <span class="badge-destaque">NOVO UNIFORME</span>
+                            <h1>MANTO OFICIAL <span>TEMPORADA</span></h1>
+                            <p>Conheça os detalhes do novo uniforme  para os jogos do time.</p>
+                        </div>
+                    </div>
+
+                    <!-- Slide 4 -->
+                    <div class="slide">
+                        <img src="https://images.unsplash.com/photo-1489944440615-453fc2b6a9a9?q=80&w=1200" alt="Destaque 4">
+                        <div class="banner-content">
+                            <span class="badge-destaque">TORCIDA</span>
+                            <h1>UNIDOS PELO SOGRONIS <span>FC</span></h1>
+                            <p>A força da nossa arquibancada faz toda a diferença dentro de campo.</p>
+                        </div>
+                    </div>
+
+                    <!-- Slide 5 -->
+                    <div class="slide">
+                        <img src="img/time-novo.png" alt="Destaque 5">
+                        <div class="badge-destaque">BASE SOGRONIS</div>
+                        <div class="banner-content">
+                            <h1>FUTURO DO CLUBE <span>josgadores ressurgem e traz espectativas para a evolução do clube</span></h1>
+                            <p> talentos do passado ressurem e ganham destaque e espaço na equipe principal.</p>
+                        </div>
+                    </div>
+
                 </div>
+
+                <!-- INDICADOR DE TEMPO DOURADO NA PARTE INFERIOR -->
+                <div class="timer-line"></div>
+
             </div>
-        </section>
+        </div>
+                    
+    </section>
 
 <!-- MAIN LOCAL ONDE VAMOS FAZER NOSSAS SECTIONS PARA DAR CONTINUIDADE NA NOSSA PAGINA.-->
 
-    <section class="sec-resultados">
+    <section class="sec-resultados" id="resultados">
     
     <!-- Cabeçalho com Título e Botões de Navegação -->
-    <div class="sec-header-resultado" id="resultados">
+    <div class="sec-header-resultado">
         <h2>Resultados</h2>
         <div style="display: flex; gap: 8px;">
             <!-- Botão Inserido mantendo SUA ESTILIZAÇÃO (.btn-proximos) -->
@@ -285,9 +285,9 @@
 
 </section>
 
-       <section class="sec-elenco">
+       <section class="sec-elenco" id="elenco">
     <!-- Cabeçalho -->
-    <div class="sec-header-elenco" id="elenco">
+    <div class="sec-header-elenco">
         <h2>Elenco Oficial</h2>
         <!-- Controles e Pontos do Carrossel -->
         <div class="elenco-controles">
@@ -559,8 +559,8 @@
 
 <!-- SECTION QUE TRATA DA GALERIA DE FOTOS DO TIME-->
 
-<section class="sec-galeria">
-    <div class="sec-header-galeria" id="galeria">
+<section class="sec-galeria" id="galeria">
+    <div class="sec-header-galeria">
         <span class="badge-tag">Momentos & Conquistas</span>
         <h2>Galeria em Ação</h2>
     </div>
@@ -666,7 +666,7 @@
 <!-- ==========================================================================
    RODAPÉ CONCEITO: ARQUIBANCADA & TRAVE (SOGRONI'S F.S.A)
    ========================================================================== -->
-<footer class="footer-estadio">
+<footer class="footer-estadio" id="contato">
     
     <!-- Grade Metálica Superior / Iluminação Neon Dourada -->
     <div class="estadio-luz-topo"></div>
@@ -699,8 +699,8 @@
         <div class="estadio-bloco bloco-navegacao">
             <h4 class="estadio-titulo-secao"><i class="fa-solid fa-bars-staggered"></i> NAVEGAÇÃO</h4>
             <nav class="estadio-nav">
-                <a href="#"><i class="fa-solid fa-angle-right"></i> Início</a>
-                <a href="#resultados"><i class="fa-solid fa-angle-right"></i> Resultado</a>
+                <a href="#inicio"><i class="fa-solid fa-angle-right"></i> Início</a>
+                <a href="#resultados"><i class="fa-solid fa-angle-right"></i> Resultados</a>
                 <a href="#elenco"><i class="fa-solid fa-angle-right"></i> Elenco & Diretoria</a>
                 <a href="#formacao"><i class="fa-solid fa-angle-right"></i> Formação</a>
                 <a href="#galeria"><i class="fa-solid fa-angle-right"></i> Galeria</a>
@@ -716,7 +716,7 @@
                 <a href="https://www.instagram.com/e.c_sogronis_f_a/" target="_blank" class="btn-estadio-rede" title="Instagram">
                     <i class="fa-brands fa-instagram"></i>
                 </a>
-                <a href="https://facebook.com" target="_blank" class="btn-estadio-rede" title="Facebook">
+                <a href="https://" target="_blank" class="btn-estadio-rede" title="Facebook">
                     <i class="fa-brands fa-facebook-f"></i>
                 </a>
                 <a href="https://wa.me/5511999999999" target="_blank" class="btn-estadio-rede btn-estadio-wa" title="WhatsApp">
