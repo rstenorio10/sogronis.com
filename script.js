@@ -1140,10 +1140,10 @@ document.addEventListener('DOMContentLoaded', () => {
 
         {
             id: 6,
-            nome: 'PATINHO',
+            nome: 'GAMBÁ',
             pos: 'VOL',
             sigla: '10',
-            foto: './img/img-jogador/jogador-pato.jpg'
+            foto: ''
         },
 
         {
@@ -1156,7 +1156,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
         {
             id: 8,
-            nome: 'Volante',
+            nome: 'JÓCA',
             pos: 'MEI',
             sigla: '5',
             foto: './img/escudo-time.png'
@@ -1172,10 +1172,10 @@ document.addEventListener('DOMContentLoaded', () => {
 
         {
             id: 10,
-            nome: 'CABEÇA',
+            nome: 'PATO',
             pos: 'CA',
             sigla: '9',
-            foto: './img/img-jogador/jogador-cabeça.png'
+            foto: './img/img-jogador/jogador-pato.jpg'
         },
 
         {
