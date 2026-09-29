@@ -1103,7 +1103,7 @@ document.addEventListener('DOMContentLoaded', () => {
             nome: 'Jé',
             pos: 'GK',
             sigla: '1',
-            foto: './img/escudo-time.png'
+            foto: './img/img-jogador/JÉ-JOGADOR.png''
         },
 
         {
@@ -1111,7 +1111,7 @@ document.addEventListener('DOMContentLoaded', () => {
             nome: 'Najo',
             pos: 'LE',
             sigla: '6',
-            foto: './img/escudo-time.png'
+            foto: './img/img-jogador/NAJO-JOGADOR.png'
         },
 
         {
@@ -1127,12 +1127,12 @@ document.addEventListener('DOMContentLoaded', () => {
             nome: 'Mosquito',
             pos: 'ZAG',
             sigla: '3',
-            foto: './img/escudo-time.png'
+            foto: './img/img-jogador/MOSQUITO-JOGADOR.png'
         },
 
         {
             id: 5,
-            nome: 'Lat. Direito',
+            nome: '',
             pos: 'LD',
             sigla: '2',
             foto: './img/escudo-time.png'
@@ -1143,7 +1143,7 @@ document.addEventListener('DOMContentLoaded', () => {
             nome: 'GAMBÁ',
             pos: 'VOL',
             sigla: '10',
-            foto: ''
+            foto: './img/img-jogador/GAMBÁ-JOGADOR.png'
         },
 
         {
@@ -1151,7 +1151,7 @@ document.addEventListener('DOMContentLoaded', () => {
             nome: 'TIJOLO',
             pos: 'MC',
             sigla: '8',
-            foto: './img/img-jogador/jogador-bloco.jpg'
+            foto: './img/img-jogador/BLOCO-JOGADOR.png'
         },
 
         {
@@ -1159,7 +1159,7 @@ document.addEventListener('DOMContentLoaded', () => {
             nome: 'JÓCA',
             pos: 'MEI',
             sigla: '5',
-            foto: './img/escudo-time.png'
+            foto: './img/img-jogador/JÓCA-JOGADOR.png'
         },
 
         {
@@ -1167,7 +1167,7 @@ document.addEventListener('DOMContentLoaded', () => {
             nome: 'BOQUINHA',
             pos: 'PE',
             sigla: '16',
-            foto: './img/img-jogador/jogador-boquinha.png'
+            foto: './img/img-jogador/DANIEL-JOGADOR.png'
         },
 
         {
@@ -1183,7 +1183,7 @@ document.addEventListener('DOMContentLoaded', () => {
             nome: 'TONY',
             pos: 'PD',
             sigla: '11',
-            foto: './img/escudo-time.png'
+            foto: './img/img-jogador/TONY-JOGADOR.png'
         }
     ];
 
