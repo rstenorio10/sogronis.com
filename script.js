@@ -1187,6 +1187,7 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     ];
 
+
     const esquemasTaticos2D = {
 
         '4-4-2': [
