@@ -1132,10 +1132,10 @@ document.addEventListener('DOMContentLoaded', () => {
 
         {
             id: 5,
-            nome: 'Lat. Direito',
+            nome: 'Anderson',
             pos: 'Anderson',
             sigla: '2',
-            foto: './img/escudo-time.png'
+            foto: './img/img-jogador/NAJO-JOGADOR.png'
         },
 
         {
