@@ -1103,7 +1103,7 @@ document.addEventListener('DOMContentLoaded', () => {
             nome: 'Jé',
             pos: 'GK',
             sigla: '1',
-            foto: './img/img-jogador/JÉ-JOGADOR.png''
+            foto: './img/escudo-time.png'
         },
 
         {
@@ -1111,7 +1111,7 @@ document.addEventListener('DOMContentLoaded', () => {
             nome: 'Najo',
             pos: 'LE',
             sigla: '6',
-            foto: './img/img-jogador/NAJO-JOGADOR.png'
+            foto: './img/escudo-time.png'
         },
 
         {
@@ -1127,12 +1127,12 @@ document.addEventListener('DOMContentLoaded', () => {
             nome: 'Mosquito',
             pos: 'ZAG',
             sigla: '3',
-            foto: './img/img-jogador/MOSQUITO-JOGADOR.png'
+            foto: './img/escudo-time.png'
         },
 
         {
             id: 5,
-            nome: '',
+            nome: 'Lat. Direito',
             pos: 'LD',
             sigla: '2',
             foto: './img/escudo-time.png'
@@ -1143,7 +1143,7 @@ document.addEventListener('DOMContentLoaded', () => {
             nome: 'GAMBÁ',
             pos: 'VOL',
             sigla: '10',
-            foto: './img/img-jogador/GAMBÁ-JOGADOR.png'
+            foto: ''
         },
 
         {
@@ -1151,7 +1151,7 @@ document.addEventListener('DOMContentLoaded', () => {
             nome: 'TIJOLO',
             pos: 'MC',
             sigla: '8',
-            foto: './img/img-jogador/BLOCO-JOGADOR.png'
+            foto: './img/img-jogador/jogador-bloco.jpg'
         },
 
         {
@@ -1159,7 +1159,7 @@ document.addEventListener('DOMContentLoaded', () => {
             nome: 'JÓCA',
             pos: 'MEI',
             sigla: '5',
-            foto: './img/img-jogador/JÓCA-JOGADOR.png'
+            foto: './img/escudo-time.png'
         },
 
         {
@@ -1167,7 +1167,7 @@ document.addEventListener('DOMContentLoaded', () => {
             nome: 'BOQUINHA',
             pos: 'PE',
             sigla: '16',
-            foto: './img/img-jogador/DANIEL-JOGADOR.png'
+            foto: './img/img-jogador/jogador-boquinha.png'
         },
 
         {
@@ -1183,10 +1183,9 @@ document.addEventListener('DOMContentLoaded', () => {
             nome: 'TONY',
             pos: 'PD',
             sigla: '11',
-            foto: './img/img-jogador/TONY-JOGADOR.png'
+            foto: './img/escudo-time.png'
         }
     ];
-
 
     const esquemasTaticos2D = {
 
